@@ -8,7 +8,7 @@ export function SalesExposedPeriod() {
     <Category title="노출 및 판매기간 설정">
       <Item title="상품 노출 기한">
         <ButtonRadioGroup
-          name="exposedPeriod"
+          name="exposePeriod"
           valueList={['제한 없음', '미노출', '노출 기간 설정']}
           onChange={(e) => {
             setExposeSelectedValue(e.target.value);
@@ -24,7 +24,7 @@ export function SalesExposedPeriod() {
       </Item>
       <Item title="상품 판매 기한">
         <ButtonRadioGroup
-          name="exposedPeriod"
+          name="sellPeriod"
           valueList={['제한 없음', '미판매', '판매 기간 설정']}
           onChange={(e) => {
             setSellSelectedValue(e.target.value);
