@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
+  height: 100%;
 `;
 
 export const Inp = styled.input`
   position: relative;
 
-  flex: 1;
+  flex: 1 1 auto;
   padding: 10px 5px;
 
   border: 1px solid #eee;
