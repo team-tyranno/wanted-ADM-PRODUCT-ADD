@@ -1,6 +1,5 @@
 import React from 'react';
-import { Category } from './components/templates/Category';
-import { Item } from './components/templates/Item';
+import { Category, Item, Input } from './components';
 
 function App() {
   return (
@@ -18,7 +17,7 @@ function App() {
         <div>hello</div>
         <div>hello</div>
         <div>hello</div>
-        <div>hello</div>
+        <Input placeHolder="dsfsv" />
       </Item>
     </Category>
   );
