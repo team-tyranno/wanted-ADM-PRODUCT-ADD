@@ -1,5 +1,6 @@
 import React from 'react';
-import { Category, Item, Input } from './components';
+import { Category, Item, Input, Button } from './components';
+import { BUTTON_SIZE } from './constants';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <div>hello</div>
         <div>hello</div>
         <Input placeHolder="dsfsv" />
+        <Button width={BUTTON_SIZE.MEDIUM} text="안녕" />
       </Item>
     </Category>
   );

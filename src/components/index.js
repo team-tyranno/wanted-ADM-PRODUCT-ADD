@@ -6,3 +6,4 @@ export { Item } from './templates/Item';
 
 // Atoms
 export { Input } from './atoms/Input';
+export { Button } from './atoms/Button';
