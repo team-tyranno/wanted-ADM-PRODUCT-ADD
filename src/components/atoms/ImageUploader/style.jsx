@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ImageWrapper = styled.article`
+export const UploaderWrapper = styled.article`
   display: flex;
   justify-content: center;
   align-items: center;
