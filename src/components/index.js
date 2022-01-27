@@ -10,6 +10,7 @@ export { FileList } from './organisms/FileList';
 export { Input } from './atoms/Input';
 export { Button } from './atoms/Button';
 export { AddedFile } from './atoms/AddedFile';
+export { ImageUploader } from './atoms/ImageUploader';
 export { ImageInput } from './atoms/ImageInput';
 
 // templates/Item
