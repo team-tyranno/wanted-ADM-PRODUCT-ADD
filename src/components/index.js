@@ -1,1 +1,2 @@
-export { Category } from './templates';
+export { Category } from './templates/Category';
+export { Item } from './templates/Item';

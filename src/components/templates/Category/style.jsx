@@ -13,4 +13,10 @@ export const Wrapper = styled.div`
 
     font-size: 20px;
   }
+
+  .item--content {
+    padding: 20px 5px;
+
+    box-sizing: border-box;
+  }
 `;
