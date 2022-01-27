@@ -13,7 +13,7 @@ export function ButtonRadio({ isChecked, value, name, onChange }) {
         checked={isChecked}
         onChange={onChange}
       />
-      <S.RadioLabel for={value}>{value}</S.RadioLabel>
+      <S.RadioLabel htmlFor={value}>{value}</S.RadioLabel>
     </S.Container>
   );
 }

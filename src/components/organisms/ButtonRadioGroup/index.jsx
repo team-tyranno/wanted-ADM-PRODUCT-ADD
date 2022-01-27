@@ -21,7 +21,7 @@ export function ButtonRadioGroup({ name, valueList, selectedValue, onChange }) {
 
 ButtonRadioGroup.propTypes = {
   name: PropTypes.string.isRequired,
-  valueList: PropTypes.node.isRequired,
+  valueList: PropTypes.arrayOf(PropTypes.string).isRequired,
   selectedValue: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };

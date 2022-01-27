@@ -4,18 +4,18 @@ import { InputDate } from 'components';
 
 import * as S from './style';
 
-export function InputDatePeriod({ names, onChangeFunctions }) {
+export function InputDatePeriod({ nameAndCallback }) {
   return (
     <S.Container>
-      <InputDate name={names[0]} onChange={onChangeFunctions[0]} />
-      <InputDate name={names[1]} onChange={onChangeFunctions[1]} />
+      {nameAndCallback.map((el) => (
+        <InputDate name={el.name} onChange={el.onChange} />
+      ))}
     </S.Container>
   );
 }
 
 InputDatePeriod.propTypes = {
-  names: PropTypes.node.isRequired,
-  onChangeFunctions: PropTypes.node.isRequired,
+  nameAndCallback: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 /*
