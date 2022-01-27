@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ImageAddBox = styled.div`
+export const Container = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

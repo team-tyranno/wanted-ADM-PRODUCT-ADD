@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
-export const FileNameSpan = styled.span`
+export const Span = styled.span`
   width: 100px;
 `;
 
-export const AddedFileDiv = styled.div`
+export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -5,7 +5,12 @@ export { ItemWithTwoCol } from './templates/ItemWithTwoCol/index';
 
 // Organisms
 export { GoodsName } from './organisms/GoodsName';
-
+export { FileList } from './organisms/FileList';
 // Atoms
 export { Input } from './atoms/Input';
 export { Button } from './atoms/Button';
+export { AddedFile } from './atoms/AddedFile';
+export { ImageInput } from './atoms/ImageInput';
+
+// templates/Item
+export { ImageAdder } from './templates/Item/ImageAdder';

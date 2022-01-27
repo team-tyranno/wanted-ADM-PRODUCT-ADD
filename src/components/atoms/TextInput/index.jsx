@@ -1,13 +1,13 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { Container, Label, Input } from 'components/atoms/TextInput/style';
+import * as S from './style';
 
-export default function TextInput({ label, placeholder }) {
+export function TextInput({ label, placeholder }) {
   return (
-    <Container>
-      {label && <Label>{label}</Label>}
-      <Input placeholder={placeholder} />
-    </Container>
+    <S.Container>
+      {label && <S.Label>{label}</S.Label>}
+      <S.Input placeholder={placeholder} />
+    </S.Container>
   );
 }
 

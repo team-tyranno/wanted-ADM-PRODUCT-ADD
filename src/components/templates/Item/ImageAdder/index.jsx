@@ -1,13 +1,12 @@
 import React from 'react';
-import ImageInput from 'components/atoms/ImageInput';
-import { ImageAddBox } from 'components/templates/Item/ImageAdder/style';
-import FileList from 'components/organisms/FileList';
+import { ImageInput, FileList } from 'components';
+import * as S from './style';
 
-export default function ImageAdder() {
+export function ImageAdder() {
   return (
-    <ImageAddBox>
+    <S.Container>
       <ImageInput title="+ 이미지 추가" />
       <FileList />
-    </ImageAddBox>
+    </S.Container>
   );
 }

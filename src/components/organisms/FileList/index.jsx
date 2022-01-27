@@ -1,12 +1,12 @@
 import React from 'react';
-import AddedFile from 'components/atoms/AddedFile';
-import { FileListDiv } from './style';
+import { AddedFile } from 'components';
+import * as S from './style';
 
-export default function FileList() {
+export function FileList() {
   return (
-    <FileListDiv>
+    <S.Container>
       <AddedFile title="이미지 1.jpg" />
       <AddedFile title="이미지 2.jpg" />
-    </FileListDiv>
+    </S.Container>
   );
 }

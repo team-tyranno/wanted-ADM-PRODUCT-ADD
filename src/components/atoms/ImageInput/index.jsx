@@ -1,9 +1,9 @@
 import React from 'react';
-import { ImageInputButton } from 'components/atoms/ImageInput/style';
 import { PropTypes } from 'prop-types';
+import * as S from './style';
 
-export default function ImageInput({ title }) {
-  return <ImageInputButton>{title}</ImageInputButton>;
+export function ImageInput({ title }) {
+  return <S.Button>{title}</S.Button>;
 }
 
 ImageInput.propTypes = {

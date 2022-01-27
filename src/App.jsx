@@ -1,6 +1,5 @@
 import React from 'react';
-import ImageAdder from 'components/templates/Item/ImageAdder';
-import { Category } from './components/templates/Category';
+import { ImageAdder, Category } from 'components';
 
 function App() {
   return (

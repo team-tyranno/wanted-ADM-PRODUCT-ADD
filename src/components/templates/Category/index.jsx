@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Wrapper } from './style';
 
-export default function Category({ title, children }) {
+export function Category({ title, children }) {
   return (
     <Wrapper>
       <div className="category--title">{title}</div>

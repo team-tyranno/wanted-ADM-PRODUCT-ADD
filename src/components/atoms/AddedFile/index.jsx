@@ -1,11 +1,11 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
-import { FileNameSpan, AddedFileDiv } from './style';
+import * as S from './style';
 
-export default function AddedFile({ title }) {
+export function AddedFile({ title }) {
   return (
-    <AddedFileDiv>
-      <FileNameSpan>{title}</FileNameSpan>
+    <S.Container>
+      <S.Span>{title}</S.Span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
@@ -24,7 +24,7 @@ export default function AddedFile({ title }) {
           d="M425.706 86.294A240 240 0 0 0 86.294 425.706A240 240 0 0 0 425.706 86.294zM256 464c-114.691 0-208-93.309-208-208S141.309 48 256 48s208 93.309 208 208s-93.309 208-208 208z"
         />
       </svg>
-    </AddedFileDiv>
+    </S.Container>
   );
 }
 
