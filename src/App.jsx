@@ -1,26 +1,21 @@
 import React from 'react';
+import ImageAdder from 'components/templates/Item/ImageAdder';
+import ProductInfo from 'components/templates/Item/ProductInfo';
 import { Category } from './components/templates/Category';
-import { Item } from './components/templates/Item';
 
 function App() {
   return (
-    <Category title="상품 기본 정보">
-      <Item title="카테고리">
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-        <div>hello</div>
-      </Item>
-    </Category>
+    <>
+      <Category title="상품 소개 이미지">
+        <ImageAdder />
+      </Category>
+      <Category title="구매자 추천 이미지">
+        <ImageAdder />
+      </Category>
+      <Category title="상품 정보 고시">
+        <ProductInfo />
+      </Category>
+    </>
   );
 }
 
