@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const InputWrapper = styled.article`
+export const OptionWrapper = styled.article`
   display: flex;
   flex-direction: column;
   margin: 12px;

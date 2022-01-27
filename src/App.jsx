@@ -1,8 +1,8 @@
 import React from 'react';
 import Category from 'components/templates/Category';
 import Item from 'components/templates/Item';
-import ProductOptionImage from 'components/atoms/ImageUploader';
-import ProductOptionInput from 'components/organisms/ProductOptionInput';
+import ImageUploader from 'components/atoms/ImageUploader';
+import ProductOption from 'components/organisms/ProductOption';
 
 function App() {
   return (
@@ -26,8 +26,8 @@ function App() {
       </Category>
 
       <Category title="상품 옵션*">
-        <ProductOptionImage />
-        <ProductOptionInput />
+        <ImageUploader />
+        <ProductOption />
       </Category>
     </>
   );

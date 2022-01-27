@@ -1,10 +1,10 @@
 import React from 'react';
 import DeleteButton from 'components/atoms/DeleteButton';
-import { InputWrapper } from './style';
+import { OptionWrapper } from './style';
 
-export default function ProductOptionInput() {
+export default function ProductOption() {
   return (
-    <InputWrapper>
+    <OptionWrapper>
       <div className="option-delete">
         <DeleteButton />
       </div>
@@ -34,6 +34,6 @@ export default function ProductOptionInput() {
       <div className="option-append">
         <button type="button">+</button> 추가 옵션 상품 추가
       </div>
-    </InputWrapper>
+    </OptionWrapper>
   );
 }
