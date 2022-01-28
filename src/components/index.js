@@ -2,7 +2,7 @@
 export { Input } from 'components/atoms/Input';
 export { Button } from 'components/atoms/Button';
 export { AddedFile } from 'components/atoms/AddedFile';
-export { ImageInput } from 'components/atoms/ImageInput';
+export { InputImage } from 'components/atoms/InputImage';
 export { AppendButton } from 'components/atoms/AppendButton';
 export { ButtonRadio } from 'components/atoms/ButtonRadio';
 export { DeleteButton } from 'components/atoms/DeleteButton';

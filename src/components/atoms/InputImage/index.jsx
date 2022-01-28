@@ -2,10 +2,10 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import * as S from './style';
 
-export function ImageInput({ title }) {
+export function InputImage({ title }) {
   return <S.Button>{title}</S.Button>;
 }
 
-ImageInput.propTypes = {
+InputImage.propTypes = {
   title: PropTypes.string.isRequired,
 };
