@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   height: 100%;
+  width: ${(props) => props.width};
 `;
 
 export const Inp = styled.input`
@@ -18,4 +19,5 @@ export const Inp = styled.input`
     color: #d3d3d3;
     font-weight: bold;
   }
+  width: 100%;
 `;

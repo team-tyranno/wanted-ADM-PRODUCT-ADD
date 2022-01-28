@@ -14,11 +14,14 @@ export { ButtonRadioGroup } from 'components/molecules/ButtonRadioGroup';
 export { InputDatePeriod } from 'components/molecules/InputDatePeriod';
 export { ProductOption } from 'components/molecules/ProductOption';
 export { AppendedImageGroup } from 'components/molecules/AppendedImageGroup';
+export { InputLabelGroup } from 'components/molecules/InputLabelGroup';
 
 // organisms
 export { ImageAppender } from 'components/organisms/ImageAppender';
 export { GoodsName } from 'components/organisms/GoodsName';
 export { SalesExposedPeriod } from 'components/organisms/SalesExposedPeriod';
+export { ProductInfo } from 'components/organisms/ProductInfo';
+export { Modal } from 'components/organisms/Modal';
 
 // templates
 export { Category } from 'components/templates/Category';
