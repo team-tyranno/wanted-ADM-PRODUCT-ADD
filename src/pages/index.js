@@ -1,1 +1,1 @@
-export { Example2Page } from './Example2';
+export { RegisterGoods } from 'pages/RegisterGoods';
