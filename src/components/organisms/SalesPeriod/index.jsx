@@ -16,7 +16,7 @@ export function SalesPeriod({
       <ButtonRadioGroup
         name={salesInfo.name}
         valueList={salesInfo.valueList}
-        onChange={(e) => salesOnChange(e.target.value)}
+        onChange={salesOnChange}
         selectedValue={selectedValue}
       />
       <InputDatePeriod

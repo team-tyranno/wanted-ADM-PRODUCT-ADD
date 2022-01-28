@@ -1,31 +1,13 @@
 import React, { useState } from 'react';
 import { Category, Item, SalesPeriod, ButtonSwitch, InputDatePeriod } from 'components';
 import { validateStartBeforeEnd } from 'utils';
-import { SET_EXPIRATION, SET_SALES, SET_DELIVERY } from 'constants';
+import { SET_EXPIRATION, SET_SALES, SET_DELIVERY, INITIAL_STATES } from 'constants';
 
 export function RegisterGoods() {
-  // 노출 및 판매기간 설정
-  const [exposeSelectedValue, setExposeSelectedValue] = useState('제한 없음');
-  const [sellSelectedValue, setSellSelectedValue] = useState('제한 없음');
-  const [exposeStartDate, setExposeStartDate] = useState('');
-  const [exposeEndDate, setExposeEndDate] = useState('');
-  const [sellStartDate, setSellStartDate] = useState('');
-  const [sellEndDate, setSellEndDate] = useState('');
-
-  // 상품 배송 설정
-  const [isUserDeliveryChecked, setIsUserDeliveryChecked] = useState(false);
-  const [isPickUpChecked, setIsPickUpChecked] = useState(false);
-  const [isReserveDeliveryChecked, setIsReserveDeliveryChecked] = useState(false);
-  const [orderDeliveryStartDate, setOrderDeliveryStartDate] = useState('');
-  const [orderDeliveryEndDate, setOrderDeliveryEndDate] = useState('');
-  const [dawnDeliveryDate, setDawnDeliveryDate] = useState('');
-  const [normalDeliveryDate, setNormalDeliveryDate] = useState('');
-
-  // 상품 혜택 허용 설정
-  const [isMileageChecked, setIsMileageChecked] = useState(true);
-
-  // 기타 설정
-  const [isThankYouCardChecked, setIsThankYouCardChecked] = useState(false);
+  const [formStates, setFormStates] = useState(INITIAL_STATES);
+  const handleChange = (newStates) => {
+    setFormStates({ ...formStates, ...newStates });
+  };
 
   return (
     <>
@@ -34,12 +16,12 @@ export function RegisterGoods() {
           <SalesPeriod
             salesInfo={SET_EXPIRATION.salesInfo}
             datesInfo={SET_EXPIRATION.datesInfo}
-            selectedValue={exposeSelectedValue}
-            selectedDates={[exposeStartDate, exposeEndDate]}
-            salesOnChange={setExposeSelectedValue}
+            selectedValue={formStates.exposeSelectedValue}
+            selectedDates={[formStates.exposeStartDate, formStates.exposeEndDate]}
+            salesOnChange={(e) => handleChange({ exposeSelectedValue: e.target.value })}
             datesOnChangeList={[
-              (e) => setExposeStartDate(e.target.value),
-              (e) => setExposeEndDate(e.target.value),
+              (e) => handleChange({ exposeStartDate: e.target.value }),
+              (e) => handleChange({ exposeEndDate: e.target.value }),
             ]}
           />
         </Item>
@@ -47,12 +29,12 @@ export function RegisterGoods() {
           <SalesPeriod
             salesInfo={SET_SALES.salesInfo}
             datesInfo={SET_SALES.datesInfo}
-            selectedValue={sellSelectedValue}
-            selectedDates={[sellStartDate, sellEndDate]}
-            salesOnChange={setSellSelectedValue}
+            selectedValue={formStates.sellSelectedValue}
+            selectedDates={[formStates.sellStartDate, formStates.sellEndDate]}
+            salesOnChange={(e) => handleChange({ sellSelectedValue: e.target.value })}
             datesOnChangeList={[
-              (e) => setSellStartDate(e.target.value),
-              (e) => setSellEndDate(e.target.value),
+              (e) => handleChange({ sellStartDate: e.target.value }),
+              (e) => handleChange({ sellEndDate: e.target.value }),
             ]}
           />
         </Item>
@@ -61,33 +43,45 @@ export function RegisterGoods() {
         <Item title="사용자 배송일 출발일 지정">
           <ButtonSwitch
             id="userdelivery"
-            isChecked={isUserDeliveryChecked}
+            isChecked={formStates.isUserDeliveryChecked}
             onChange={() => {
-              setIsUserDeliveryChecked(!isUserDeliveryChecked);
-              if (!isUserDeliveryChecked) setIsReserveDeliveryChecked(false);
+              handleChange({
+                isUserDeliveryChecked: !formStates.isUserDeliveryChecked,
+                isReserveDeliveryChecked: !formStates.isUserDeliveryChecked
+                  ? false
+                  : formStates.isReserveDeliveryChecked,
+              });
             }}
           />
         </Item>
         <Item title="방문 수령">
           <ButtonSwitch
             id="pickup"
-            isChecked={isPickUpChecked}
+            isChecked={formStates.isPickUpChecked}
             onChange={() => {
-              setIsPickUpChecked(!isPickUpChecked);
-              if (!isPickUpChecked) setIsReserveDeliveryChecked(false);
+              handleChange({
+                isPickUpChecked: !formStates.isPickUpChecked,
+                isReserveDeliveryChecked: !formStates.isPickUpChecked
+                  ? false
+                  : formStates.isReserveDeliveryChecked,
+              });
             }}
           />
         </Item>
         <Item title="선 주문 예약 배송">
           <ButtonSwitch
             id="reservedelivery"
-            isChecked={isReserveDeliveryChecked}
+            isChecked={formStates.isReserveDeliveryChecked}
             onChange={() => {
-              setIsReserveDeliveryChecked(!isReserveDeliveryChecked);
-              if (!isReserveDeliveryChecked) {
-                setIsUserDeliveryChecked(false);
-                setIsPickUpChecked(false);
-              }
+              handleChange({
+                isReserveDeliveryChecked: !formStates.isReserveDeliveryChecked,
+                isUserDeliveryChecked: !formStates.isReserveDeliveryChecked
+                  ? false
+                  : formStates.isUserDeliveryChecked,
+                isPickUpChecked: !formStates.isReserveDeliveryChecked
+                  ? false
+                  : formStates.isPickupChecked,
+              });
             }}
           />
           <InputDatePeriod
@@ -97,41 +91,35 @@ export function RegisterGoods() {
               (e) => {
                 const StartBeforeEnd = validateStartBeforeEnd({
                   startDate: e.target.value,
-                  endDate: orderDeliveryEndDate,
+                  endDate: formStates.orderDeliveryEndDate,
                 });
-                if (!StartBeforeEnd) {
-                  setOrderDeliveryEndDate('');
-                }
-                setOrderDeliveryStartDate(e.target.value);
+                handleChange({
+                  orderDeliveryStartDate: e.target.value,
+                  orderDeliveryEndDate: !StartBeforeEnd ? '' : formStates.orderDeliveryEndDate,
+                });
               },
               (e) => {
                 const StartBeforeEnd = validateStartBeforeEnd({
-                  startDate: orderDeliveryStartDate,
+                  startDate: formStates.orderDeliveryStartDate,
                   endDate: e.target.value,
                 });
                 const noDawnDateCollide = validateStartBeforeEnd({
                   startDate: e.target.value,
-                  endDate: dawnDeliveryDate,
+                  endDate: formStates.dawnDeliveryDate,
                 });
                 const noNormalDateCollide = validateStartBeforeEnd({
                   startDate: e.target.value,
-                  endDate: normalDeliveryDate,
+                  endDate: formStates.normalDeliveryDate,
                 });
-                if (!StartBeforeEnd) {
-                  setOrderDeliveryStartDate('');
-                }
-                if (!noDawnDateCollide) {
-                  alert('주문 시간 이후로 출고일을 지정해 주세요');
-                  setDawnDeliveryDate('');
-                }
-                if (!noNormalDateCollide) {
-                  alert('주문 시간 이후로 출고일을 지정해 주세요');
-                  setNormalDeliveryDate('');
-                }
-                setOrderDeliveryEndDate(e.target.value);
+                handleChange({
+                  orderDeliveryStartDate: !StartBeforeEnd ? '' : formStates.orderDeliveryStartDate,
+                  dawnDeliveryDate: !noDawnDateCollide ? '' : formStates.dawnDeliveryDate,
+                  normalDeliveryDate: !noNormalDateCollide ? '' : formStates.normalDeliveryDate,
+                  orderDeliveryEndDate: e.target.value,
+                });
               },
             ]}
-            selectedDates={[orderDeliveryStartDate, orderDeliveryEndDate]}
+            selectedDates={[formStates.orderDeliveryStartDate, formStates.orderDeliveryEndDate]}
           />
           <InputDatePeriod
             description={SET_DELIVERY.DAWN_DELIVERY.description}
@@ -139,18 +127,18 @@ export function RegisterGoods() {
             onChangeList={[
               (e) => {
                 const noDawnDateCollide = validateStartBeforeEnd({
-                  startDate: orderDeliveryEndDate,
+                  startDate: formStates.orderDeliveryEndDate,
                   endDate: e.target.value,
                 });
                 if (!noDawnDateCollide) {
                   alert('주문 시간 이후로 출고일을 지정해 주세요');
-                  setDawnDeliveryDate('');
+                  handleChange({ dawnDeliveryDate: '' });
                 } else {
-                  setDawnDeliveryDate(e.target.value);
+                  handleChange({ dawnDeliveryDate: e.target.value });
                 }
               },
             ]}
-            selectedDates={[dawnDeliveryDate]}
+            selectedDates={[formStates.dawnDeliveryDate]}
           />
           <InputDatePeriod
             description={SET_DELIVERY.NORMAL_DELIVERY.description}
@@ -158,18 +146,18 @@ export function RegisterGoods() {
             onChangeList={[
               (e) => {
                 const noNormalDateCollide = validateStartBeforeEnd({
-                  startDate: orderDeliveryEndDate,
+                  startDate: formStates.orderDeliveryEndDate,
                   endDate: e.target.value,
                 });
                 if (!noNormalDateCollide) {
                   alert('주문 시간 이후로 출고일을 지정해 주세요');
-                  setNormalDeliveryDate('');
+                  handleChange({ normalDeliveryDate: '' });
                 } else {
-                  setNormalDeliveryDate(e.target.value);
+                  handleChange({ normalDeliveryDate: e.target.value });
                 }
               },
             ]}
-            selectedDates={[normalDeliveryDate]}
+            selectedDates={[formStates.normalDeliveryDate]}
           />
         </Item>
       </Category>
@@ -177,9 +165,9 @@ export function RegisterGoods() {
         <Item title="마일리지 적립">
           <ButtonSwitch
             id="mileage"
-            isChecked={isMileageChecked}
+            isChecked={formStates.isMileageChecked}
             onChange={() => {
-              setIsMileageChecked(!isMileageChecked);
+              handleChange({ isMileageChecked: !formStates.isMileageChecked });
             }}
           />
         </Item>
@@ -188,9 +176,9 @@ export function RegisterGoods() {
         <Item title="감사카드 제공">
           <ButtonSwitch
             id="thankyoucard"
-            isChecked={isThankYouCardChecked}
+            isChecked={formStates.isThankYouCardChecked}
             onChange={() => {
-              setIsThankYouCardChecked(!isThankYouCardChecked);
+              handleChange({ isThankYouCardChecked: !formStates.isThankYouCardChecked });
             }}
           />
         </Item>
