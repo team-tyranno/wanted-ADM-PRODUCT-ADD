@@ -3,43 +3,31 @@ import { PropTypes } from 'prop-types';
 
 import { ButtonRadioGroup, InputDatePeriod } from 'components';
 
-export function SalesPeriod({
-  salesInfo,
-  datesInfo,
-  selectedValue,
-  selectedDates,
-  salesOnChange,
-  datesOnChangeList,
-}) {
+export function SalesPeriod({ info, formStates, handleChange }) {
   return (
     <>
       <ButtonRadioGroup
-        name={salesInfo.name}
-        valueList={salesInfo.valueList}
-        onChange={salesOnChange}
-        selectedValue={selectedValue}
+        name={info.salesInfo.name}
+        valueList={info.salesInfo.valueList}
+        onChange={(e) => handleChange({ [info.salesState]: e.target.value })}
+        selectedValue={formStates[info.salesState]}
       />
       <InputDatePeriod
-        description={datesInfo.description}
-        nameList={datesInfo.nameList}
-        selectedDates={selectedDates}
-        onChangeList={datesOnChangeList}
+        description={info.datesInfo.description}
+        nameList={info.datesInfo.nameList}
+        selectedDates={info.datesStates.map((state) => formStates[state])}
+        onChangeList={info.datesStates.map((state) => {
+          return (e) => handleChange({ [state]: e.target.value });
+        })}
       />
     </>
   );
 }
 
 SalesPeriod.propTypes = {
-  salesInfo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    valueList: PropTypes.arrayOf(PropTypes.string).isRequired,
-  }).isRequired,
-  datesInfo: PropTypes.shape({
-    description: PropTypes.string.isRequired,
-    nameList: PropTypes.arrayOf(PropTypes.string).isRequired,
-  }).isRequired,
-  selectedValue: PropTypes.string.isRequired,
-  selectedDates: PropTypes.arrayOf(PropTypes.string).isRequired,
-  salesOnChange: PropTypes.func.isRequired,
-  datesOnChangeList: PropTypes.arrayOf(PropTypes.func).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  info: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  formStates: PropTypes.object.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
