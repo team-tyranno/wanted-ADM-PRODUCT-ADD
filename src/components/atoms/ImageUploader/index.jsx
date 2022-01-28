@@ -1,17 +1,12 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 import { UploaderWrapper } from './style';
 
-export function ImageUploader({ text }) {
+export default function ImageUploader() {
   return (
     <UploaderWrapper>
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-      <label htmlFor="product-image">{text}</label>
+      <label htmlFor="product-image">+ 이미지 첨부</label>
       <input id="product-image" type="file" accept="image/*" />
     </UploaderWrapper>
   );
 }
-
-ImageUploader.propTypes = {
-  text: PropTypes.string.isRequired,
-};

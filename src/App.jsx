@@ -10,7 +10,6 @@ function App() {
       <Category title="구매자 추천 이미지">
         <ImageAdder />
       </Category>
-      <Category title="상품 정보 고시">{/* <ProductInfo /> */}</Category>
     </>
   );
 }
