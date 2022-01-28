@@ -1,20 +1,19 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
+import { nanoid } from 'nanoid';
 import { FileList, InputImage } from 'components';
 import * as S from './style';
 
 export function ImageAdder() {
-  const id = useRef(0);
   const [files, setFiles] = useState([]);
 
   const onChange = (e) => {
-    const { current } = id;
+    e.preventDefault();
     const { name } = e.target.files[0];
-    setFiles([{ current, name }, ...files]);
-    id.current += 1;
+    setFiles([{ key: nanoid(), name }, ...files]);
   };
 
   const onDelete = (key) => {
-    setFiles(files.filter((file) => file.current !== key));
+    setFiles(files.filter((file) => file.key !== key));
   };
 
   return (
@@ -22,7 +21,7 @@ export function ImageAdder() {
       <InputImage onChange={onChange} />
       <S.TextInner>
         {files.map((file) => (
-          <FileList key={file.current} name={file.name} onDelete={() => onDelete(file.current)} />
+          <FileList key={file.key} name={file.name} onDelete={() => onDelete(file.key)} />
         ))}
       </S.TextInner>
     </S.Container>
