@@ -4,16 +4,14 @@ import { InputDate } from 'components';
 
 import * as S from './style';
 
-export function InputDatePeriod({ nameAndCallback, description }) {
+export function InputDatePeriod({ description, nameList, onChangeList, selectedDates }) {
   return (
     <S.Container>
-      {nameAndCallback.map((el, index) => (
+      {nameList.map((name, index) => (
         <>
-          {index === 0 && description !== '' && (
-            <S.Description htmlFor={el.name}>{description}</S.Description>
-          )}
+          {index === 0 && description !== '' && <S.Description>{description}</S.Description>}
           {index !== 0 && <S.Tilde>~</S.Tilde>}
-          <InputDate name={el.name} date={el.date} onChange={el.onChange} />
+          <InputDate name={name} date={selectedDates[index]} onChange={onChangeList[index]} />
         </>
       ))}
     </S.Container>
@@ -22,7 +20,9 @@ export function InputDatePeriod({ nameAndCallback, description }) {
 
 InputDatePeriod.propTypes = {
   description: PropTypes.string.isRequired,
-  nameAndCallback: PropTypes.arrayOf(PropTypes.object).isRequired,
+  nameList: PropTypes.arrayOf(PropTypes.string).isRequired,
+  onChangeList: PropTypes.arrayOf(PropTypes.func).isRequired,
+  selectedDates: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 /*
