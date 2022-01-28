@@ -1,10 +1,10 @@
 import React from 'react';
 import { ButtonDelete } from 'components';
-import { OptionWrapper } from './style';
+import * as S from './style';
 
-export function ProductOption() {
+export function ProductOptionDetail() {
   return (
-    <OptionWrapper>
+    <S.Wrapper>
       <div className="option-delete">
         <ButtonDelete width="60px" height="32px" />
       </div>
@@ -36,6 +36,6 @@ export function ProductOption() {
       <div className="option-append">
         <button type="button">╋</button> 추가 옵션 상품 추가
       </div>
-    </OptionWrapper>
+    </S.Wrapper>
   );
 }

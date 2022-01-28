@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const OptionWrapper = styled.article`
+export const Wrapper = styled.article`
   display: flex;
   flex-direction: column;
   align-items: space-between;
