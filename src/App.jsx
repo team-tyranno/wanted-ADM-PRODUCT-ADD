@@ -5,13 +5,13 @@ function App() {
   return (
     <>
       <Item>
-        <ImageAdder />
+        <ImageAdder isMulti={false} />
       </Item>
       <Item>
-        <ImageAdder />
+        <ImageAdder isMulti />
       </Item>
       <Item>
-        <ImageAdder />
+        <ImageAdder isMulti={false} />
       </Item>
     </>
   );
