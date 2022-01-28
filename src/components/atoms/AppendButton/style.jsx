@@ -3,15 +3,15 @@ import styled from 'styled-components';
 export const ButtonWrapper = styled.button`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
-  border: 1px solid #dc3444;
+  margin: 12px;
+  border: 1px solid #4609ad;
   border-radius: 4px;
   background-color: #fff;
-  color: #dc3444;
   font-size: 15px;
   cursor: pointer;
 
   &:hover {
-    background-color: #dc3444;
+    background-color: #4609ad;
     color: #ffffff;
   }
 `;

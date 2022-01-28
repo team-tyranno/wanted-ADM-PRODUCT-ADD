@@ -2,20 +2,21 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ButtonWrapper } from './style';
 
-export function DeleteButton({ width, height }) {
+export function AppendButton({ width, height, content }) {
   return (
     <ButtonWrapper type="button" width={width} height={height}>
-      삭제
+      {content}
     </ButtonWrapper>
   );
 }
 
-DeleteButton.propTypes = {
+AppendButton.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
+  content: PropTypes.string.isRequired,
 };
 
-DeleteButton.defaultProps = {
+AppendButton.defaultProps = {
   width: null,
   height: null,
 };

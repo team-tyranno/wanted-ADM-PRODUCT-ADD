@@ -15,6 +15,11 @@ export const UploaderWrapper = styled.article`
     padding: 12px 48px;
     font-size: 16px;
     cursor: pointer;
+
+    &:hover {
+      background-color: #4609ad;
+      color: #ffffff;
+    }
   }
 
   input {

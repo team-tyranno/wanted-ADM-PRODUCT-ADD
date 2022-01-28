@@ -1,7 +1,7 @@
 import React from 'react';
 import { UploaderWrapper } from './style';
 
-export default function ImageUploader() {
+export function ImageUploader() {
   return (
     <UploaderWrapper>
       {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
