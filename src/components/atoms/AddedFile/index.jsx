@@ -2,12 +2,13 @@ import React from 'react';
 import { PropTypes } from 'prop-types';
 import * as S from './style';
 
-export function AddedFile({ title }) {
+export function AddedFile({ title, onDelete }) {
   return (
     <S.Container>
       <S.Span>{title}</S.Span>
       <div>
         <svg
+          onClick={onDelete}
           xmlns="http://www.w3.org/2000/svg"
           aria-hidden="true"
           role="img"
@@ -32,4 +33,5 @@ export function AddedFile({ title }) {
 
 AddedFile.propTypes = {
   title: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
 };

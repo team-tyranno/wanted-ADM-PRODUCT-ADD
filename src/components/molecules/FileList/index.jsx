@@ -1,12 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { AddedFile } from 'components';
 import * as S from './style';
 
-export function FileList() {
+export function FileList({ name, onDelete }) {
   return (
     <S.Container>
-      <AddedFile title="이미지 1.jpg" />
-      <AddedFile title="이미지 2.jpg" />
+      <AddedFile title={name} onDelete={onDelete} />
     </S.Container>
   );
 }
+
+FileList.propTypes = {
+  name: PropTypes.string.isRequired,
+  onDelete: PropTypes.func.isRequired,
+};
