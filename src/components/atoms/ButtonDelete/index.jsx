@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { ButtonWrapper } from './style';
 
-export function DeleteButton({ width, height, borderColor, onClick }) {
+export function ButtonDelete({ width, height, borderColor, onClick }) {
   return (
     <ButtonWrapper
       type="button"
@@ -16,14 +16,14 @@ export function DeleteButton({ width, height, borderColor, onClick }) {
   );
 }
 
-DeleteButton.propTypes = {
+ButtonDelete.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   borderColor: PropTypes.string,
   onClick: PropTypes.func,
 };
 
-DeleteButton.defaultProps = {
+ButtonDelete.defaultProps = {
   width: null,
   height: null,
   borderColor: null,
