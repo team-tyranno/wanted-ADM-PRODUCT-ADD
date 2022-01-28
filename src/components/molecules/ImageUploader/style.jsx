@@ -9,7 +9,7 @@ export const UploaderWrapper = styled.article`
   border: 1px solid #ddd;
   background-color: #dedede;
 
-  label {
+  /* label {
     border: 1px solid #4609ad;
     border-radius: 4px;
     padding: 12px 48px;
@@ -24,5 +24,5 @@ export const UploaderWrapper = styled.article`
 
   input {
     display: none;
-  }
+  } */
 `;
