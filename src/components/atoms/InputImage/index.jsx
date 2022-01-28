@@ -5,6 +5,7 @@ import * as S from './style';
 
 export function InputImage({ onChange }) {
   const idx = nanoid().toString();
+
   return (
     <S.Wrapper>
       <label htmlFor={idx}>
