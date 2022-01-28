@@ -5,7 +5,7 @@ export { AddedFile } from 'components/atoms/AddedFile';
 export { InputImage } from 'components/atoms/InputImage';
 export { AppendButton } from 'components/atoms/AppendButton';
 export { ButtonRadio } from 'components/atoms/ButtonRadio';
-export { DeleteButton } from 'components/atoms/DeleteButton';
+export { ButtonDelete } from 'components/atoms/ButtonDelete';
 export { InputDate } from 'components/atoms/InputDate';
 
 // molecules
