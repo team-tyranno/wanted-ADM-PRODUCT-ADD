@@ -20,7 +20,7 @@ export { FileList } from 'components/molecules/FileList';
 // organisms
 export { ImageAdder } from 'components/organisms/ImageAdder';
 export { GoodsName } from 'components/organisms/GoodsName';
-export { SalesExposedPeriod } from 'components/organisms/SalesExposedPeriod';
+export { SalesPeriod } from 'components/organisms/SalesPeriod';
 
 // templates
 export { Category } from 'components/templates/Category';
