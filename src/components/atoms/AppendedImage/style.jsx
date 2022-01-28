@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Span = styled.span`
-  width: 100px;
+  width: 150px;
 `;
 
 export const Container = styled.div`

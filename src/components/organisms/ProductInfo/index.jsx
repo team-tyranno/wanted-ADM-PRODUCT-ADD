@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Input, InputLabelGroup, DeleteButton, Button } from 'components';
+import { Input, InputLabelGroup, ButtonDelete, Button } from 'components';
 import { ProductInfoData } from 'constants';
 import { nanoid } from 'nanoid';
 import * as S from './style';
@@ -14,7 +14,7 @@ export function ProductInfo() {
         <S.Wrap key={el}>
           <S.Title>
             정보고시 {idx + 1}
-            <DeleteButton
+            <ButtonDelete
               width="60px"
               height="35px"
               onClick={() => setInfos(infos.filter((info) => info !== el))}
@@ -28,7 +28,7 @@ export function ProductInfo() {
               <S.InputDiv key={e}>
                 <Input width="29%" placeHolder="항목 제목 자유 입력" />
                 <Input width="60%" placeHolder="내용을 입력해주세요." />
-                <DeleteButton
+                <ButtonDelete
                   width="10%"
                   height="35px"
                   borderColor="#eee"
@@ -47,7 +47,7 @@ export function ProductInfo() {
       <Button
         text="+ 정보고시 추가"
         width="100%"
-        height="100px"
+        height="45px"
         onClick={() => setInfos([...infos, nanoid()])}
       />
     </S.Container>

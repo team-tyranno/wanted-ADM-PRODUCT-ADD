@@ -1,8 +1,10 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 
-export default function CircleX() {
+export default function CircleX({ onDelete }) {
   return (
     <svg
+      onClick={onDelete}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       role="img"
@@ -22,3 +24,7 @@ export default function CircleX() {
     </svg>
   );
 }
+
+CircleX.propTypes = {
+  onDelete: PropTypes.func.isRequired,
+};

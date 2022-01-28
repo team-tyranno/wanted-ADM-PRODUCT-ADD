@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { ImageAppender, Category, ProductInfo, Modal } from 'components';
 
 function App() {
-  const [openModal, setOpenModal] = useState(false);
-  useEffect(() => {
-    setOpenModal(false);
-  });
+  const [openModal, setOpenModal] = useState(true);
 
   return (
     <>
       <Category title="상품 소개 이미지">
-        <ImageAppender />
+        <ImageAppender isMulti />
       </Category>
       <Category title="구매자 추천 이미지">
-        <ImageAppender />
+        <ImageAppender isMulti />
       </Category>
       <Category title="상품 정보 고시">
         <ProductInfo />
       </Category>
-      {openModal && <Modal text="입력해주세요" />}
+      {openModal && <Modal text="입력해주세요" onClick={() => setOpenModal(false)} />}
     </>
   );
 }

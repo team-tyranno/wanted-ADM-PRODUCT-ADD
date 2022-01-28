@@ -5,7 +5,7 @@ export const Container = styled.div`
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
-  height: 100px;
-  padding: 20px;
+  min-height: 100px;
+  padding: 40px;
   gap: 30px;
 `;
