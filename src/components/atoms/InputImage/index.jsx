@@ -1,11 +1,13 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 import * as S from './style';
 
-export function InputImage({ title }) {
-  return <S.Button>{title}</S.Button>;
+export function InputImage() {
+  return (
+    <S.Wrapper>
+      <label htmlFor="product-image">
+        + 이미지 첨부
+        <input id="product-image" type="file" accept="image/*" />
+      </label>
+    </S.Wrapper>
+  );
 }
-
-InputImage.propTypes = {
-  title: PropTypes.string.isRequired,
-};

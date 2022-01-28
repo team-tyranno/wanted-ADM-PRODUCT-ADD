@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageAdder, Category } from 'components';
+import { ImageAdder, Category, Item } from 'components';
 
 function App() {
   return (
@@ -10,6 +10,9 @@ function App() {
       <Category title="구매자 추천 이미지">
         <ImageAdder />
       </Category>
+      <Item>
+        <ImageAdder />
+      </Item>
     </>
   );
 }
