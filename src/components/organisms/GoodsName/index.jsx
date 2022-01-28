@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { customAlphabet } from 'nanoid';
-import { Item } from '../../templates/Item';
+import { Item } from 'components';
 import { Input } from '../../atoms/Input';
 import { Id } from './style';
 
