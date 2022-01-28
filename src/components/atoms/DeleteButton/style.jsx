@@ -1,11 +1,17 @@
 import styled from 'styled-components';
 
 export const ButtonWrapper = styled.button`
+  width: ${(props) => props.width};
+  height: ${(props) => props.height};
   border: 1px solid #dc3444;
   border-radius: 4px;
-  padding: 8px 24px;
   background-color: #fff;
   color: #dc3444;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
+
+  &:hover {
+    background-color: #dc3444;
+    color: #ffffff;
+  }
 `;
