@@ -21,11 +21,7 @@ export function ImageAdder({ isMulti }) {
   return (
     <S.Container>
       <InputImage onChange={onChange} />
-      <S.TextInner>
-        {files.map((file) => (
-          <FileList key={file.key} name={file.name} onDelete={() => onDelete(file.key)} />
-        ))}
-      </S.TextInner>
+      <FileList files={files} onDelete={onDelete} />
     </S.Container>
   );
 }
