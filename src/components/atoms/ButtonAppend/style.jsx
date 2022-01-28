@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ButtonWrapper = styled.button`
+export const Wrapper = styled.button`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   margin: 12px;
