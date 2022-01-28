@@ -7,7 +7,6 @@ export function ImageAdder() {
   const [files, setFiles] = useState([]);
 
   const onChange = (e) => {
-    e.preventDefault();
     const { name } = e.target.files[0];
     setFiles([{ key: nanoid(), name }, ...files]);
   };
