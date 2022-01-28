@@ -3,112 +3,102 @@ import styled from 'styled-components';
 export const OptionWrapper = styled.article`
   display: flex;
   flex-direction: column;
+  align-items: space-between;
+  height: 100%;
   margin: 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 12px;
   background-color: #fff;
-  font-size: 16px;
 
   div {
-    margin-bottom: 15px;
-  }
+    margin-block-end: 16px;
 
-  .option-delete {
-    margin-left: auto;
-
-    button {
-      padding: 6px 16px;
-      font-size: 15px;
+    &.option-delete {
+      margin-left: auto;
     }
-  }
 
-  .option-name input {
-    width: calc(100% - 20px);
-    height: 40px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding-left: 16px;
-    font-size: 16px;
-  }
-
-  .option-info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 15px;
-
-    input {
-      height: 40px;
-      margin-right: -10px;
+    &.option-name input {
+      width: 100%;
+      height: 42px;
       border: 1px solid #ddd;
       border-radius: 4px;
-      padding-left: 16px;
-      font-size: 15px;
-
-      &.price {
-        width: 140px;
-      }
-
-      &.stock {
-        width: 80px;
-      }
+      padding-left: 12px;
+      font-size: 16px;
     }
 
-    select {
-      height: 40px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 0 6px;
+    &.option-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-size: 15px;
-    }
 
-    &.appended {
-      span {
-        margin-right: -10px;
-        color: #ddd;
-        font-size: 36px;
+      span b {
+        font-weight: 800;
       }
 
       input {
-        height: 40px;
+        height: 42px;
+        margin-right: -20px;
         border: 1px solid #ddd;
         border-radius: 4px;
-        padding-left: 16px;
+        padding-left: 12px;
         font-size: 15px;
-
-        &.name {
-          width: 300px;
-        }
 
         &.price {
-          width: 200px;
-          margin-right: -10px;
+          width: 160px;
+        }
+
+        &.stock {
+          width: 120px;
         }
       }
 
-      button {
-        height: 40px;
-        padding: 6px 16px;
+      select {
+        width: 80px;
+        height: 42px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 0 8px;
         font-size: 15px;
       }
+
+      &.appended {
+        span {
+          margin-right: -20px;
+          color: #ddd;
+          font-size: 36px;
+        }
+
+        input {
+          &.name {
+            width: 400px;
+          }
+
+          &.price {
+            width: 200px;
+          }
+        }
+      }
     }
-  }
 
-  .option-append {
-    display: flex;
-    align-items: center;
-
-    button {
-      width: 32px;
-      height: 32px;
-      margin-right: 12px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-      padding: 0;
-      background-color: #fff;
-      font-size: 29px;
+    &.option-append {
+      display: flex;
+      align-items: center;
+      margin-right: auto;
       cursor: pointer;
+
+      button {
+        width: 27px;
+        height: 25px;
+        margin-right: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 2px 0;
+        background-color: #fff;
+        font-size: 18px;
+        cursor: pointer;
+      }
     }
   }
 `;
