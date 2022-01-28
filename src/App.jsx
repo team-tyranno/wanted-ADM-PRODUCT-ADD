@@ -1,5 +1,5 @@
 import React from 'react';
-import { ImageAdder, Item } from 'components';
+import { ImageAdder, Item, Theme } from 'components';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <ImageAdder isMulti />
       </Item>
       <Item>
-        <ImageAdder isMulti={false} />
+        <Theme />
       </Item>
     </>
   );
