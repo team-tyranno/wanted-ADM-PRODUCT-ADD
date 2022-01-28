@@ -1,12 +1,12 @@
 import React from 'react';
-import DeleteButton from 'components/atoms/DeleteButton';
+import { DeleteButton } from 'components';
 import { OptionWrapper } from './style';
 
-export default function ProductOption() {
+export function ProductOption() {
   return (
     <OptionWrapper>
       <div className="option-delete">
-        <DeleteButton />
+        <DeleteButton width="60px" height="32px" />
       </div>
 
       <div className="option-name">
@@ -15,7 +15,9 @@ export default function ProductOption() {
 
       <div className="option-info">
         <input className="price" type="text" placeholder="상품 정상가 (필수)" />원
-        <span>할인율 %</span>
+        <span>
+          할인율: <b>38%</b>
+        </span>
         <input className="price" type="text" placeholder="상품 판매가 (필수)" />원
         <input className="stock" type="text" placeholder="재고 (필수)" />개
         <select name="tax">
@@ -28,11 +30,11 @@ export default function ProductOption() {
         <span>└</span>
         <input className="name" type="text" placeholder="추가 옵션명 (필수)" />
         <input className="price" type="text" placeholder="추가 옵션 정상가 (필수)" />원
-        <DeleteButton />
+        <DeleteButton width="60px" height="42px" />
       </div>
 
       <div className="option-append">
-        <button type="button">+</button> 추가 옵션 상품 추가
+        <button type="button">╋</button> 추가 옵션 상품 추가
       </div>
     </OptionWrapper>
   );
