@@ -8,6 +8,8 @@ export { ButtonRadio } from 'components/atoms/ButtonRadio';
 export { DeleteButton } from 'components/atoms/DeleteButton';
 export { InputDate } from 'components/atoms/InputDate';
 
+export { ButtonSwitch } from 'components/atoms/ButtonSwitch';
+
 // molecules
 export { ImageUploader } from 'components/molecules/ImageUploader';
 export { ButtonRadioGroup } from 'components/molecules/ButtonRadioGroup';
