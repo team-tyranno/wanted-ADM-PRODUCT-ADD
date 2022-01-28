@@ -64,6 +64,7 @@ export function RegisterGoods() {
               });
             }}
           />
+
           <InputDatePeriod
             info={SET_DELIVERY.DELIVERY_TIME}
             formStates={formStates}

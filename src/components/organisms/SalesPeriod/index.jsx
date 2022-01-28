@@ -9,14 +9,13 @@ export function SalesPeriod({ info, formStates, handleChange }) {
       <ButtonRadioGroup
         name={info.salesInfo.name}
         valueList={info.salesInfo.valueList}
-        onChange={(e) => handleChange({ [info.salesState]: e.target.value })}
-        selectedValue={formStates[info.salesState]}
+        onChange={(e) => handleChange({ [info.salesInfo.salesState]: e.target.value })}
+        selectedValue={formStates[info.salesInfo.salesState]}
       />
       <InputDatePeriod
-        description={info.datesInfo.description}
-        nameList={info.datesInfo.nameList}
-        selectedDates={info.datesStates.map((state) => formStates[state])}
-        onChangeList={info.datesStates.map((state) => {
+        info={info.datesInfo}
+        formStates={formStates}
+        onChangeList={info.datesInfo.dateStates.map((state) => {
           return (e) => handleChange({ [state]: e.target.value });
         })}
       />

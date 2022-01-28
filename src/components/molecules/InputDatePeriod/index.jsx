@@ -4,7 +4,7 @@ import { InputDate } from 'components';
 
 import * as S from './style';
 
-export function InputDatePeriodTest({ info, formStates, onChangeList }) {
+export function InputDatePeriod({ info, formStates, onChangeList }) {
   return (
     <S.Container>
       {info.nameList.map((name, index) => (
@@ -24,7 +24,7 @@ export function InputDatePeriodTest({ info, formStates, onChangeList }) {
   );
 }
 
-InputDatePeriodTest.propTypes = {
+InputDatePeriod.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   info: PropTypes.object.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
