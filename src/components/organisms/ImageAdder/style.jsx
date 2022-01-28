@@ -9,3 +9,11 @@ export const Container = styled.div`
   padding: 20px;
   gap: 30px;
 `;
+
+export const TextInner = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+`;

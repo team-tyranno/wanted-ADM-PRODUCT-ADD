@@ -20,9 +20,11 @@ export function ImageAdder() {
   return (
     <S.Container>
       <InputImage onChange={onChange} />
-      {files.map(({ current, name }) => (
-        <FileList key={current} name={name} onDelete={() => onDelete(current)} />
-      ))}
+      <S.TextInner>
+        {files.map((file) => (
+          <FileList key={file.current} name={file.name} onDelete={() => onDelete(file.current)} />
+        ))}
+      </S.TextInner>
     </S.Container>
   );
 }
