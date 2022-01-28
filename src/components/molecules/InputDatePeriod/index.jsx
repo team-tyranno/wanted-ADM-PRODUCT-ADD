@@ -4,32 +4,30 @@ import { InputDate } from 'components';
 
 import * as S from './style';
 
-export function InputDatePeriod({ description, nameList, onChangeList, selectedDates }) {
+export function InputDatePeriodTest({ info, formStates, onChangeList }) {
   return (
     <S.Container>
-      {nameList.map((name, index) => (
+      {info.nameList.map((name, index) => (
         <>
-          {index === 0 && description !== '' && <S.Description>{description}</S.Description>}
+          {index === 0 && info.description !== '' && (
+            <S.Description>{info.description}</S.Description>
+          )}
           {index !== 0 && <S.Tilde>~</S.Tilde>}
-          <InputDate name={name} date={selectedDates[index]} onChange={onChangeList[index]} />
+          <InputDate
+            name={name}
+            date={formStates[info.dateStates[index]]}
+            onChange={onChangeList[index]}
+          />
         </>
       ))}
     </S.Container>
   );
 }
 
-InputDatePeriod.propTypes = {
-  description: PropTypes.string.isRequired,
-  nameList: PropTypes.arrayOf(PropTypes.string).isRequired,
+InputDatePeriodTest.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  info: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  formStates: PropTypes.object.isRequired,
   onChangeList: PropTypes.arrayOf(PropTypes.func).isRequired,
-  selectedDates: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
-
-/*
-
-<InputDatePeriod
-  names={['startDate', 'endDate']}
-  onChangeFunctions={[() => console.log('input1'), () => console.log('input2')]}
-/>
-
-*/

@@ -13,30 +13,10 @@ export function RegisterGoods() {
     <>
       <Category title="노출 및 판매기간 설정">
         <Item title="상품 노출 기한">
-          <SalesPeriod
-            salesInfo={SET_EXPIRATION.salesInfo}
-            datesInfo={SET_EXPIRATION.datesInfo}
-            selectedValue={formStates.exposeSelectedValue}
-            selectedDates={[formStates.exposeStartDate, formStates.exposeEndDate]}
-            salesOnChange={(e) => handleChange({ exposeSelectedValue: e.target.value })}
-            datesOnChangeList={[
-              (e) => handleChange({ exposeStartDate: e.target.value }),
-              (e) => handleChange({ exposeEndDate: e.target.value }),
-            ]}
-          />
+          <SalesPeriod info={SET_EXPIRATION} formStates={formStates} handleChange={handleChange} />
         </Item>
         <Item title="상품 판매 기한">
-          <SalesPeriod
-            salesInfo={SET_SALES.salesInfo}
-            datesInfo={SET_SALES.datesInfo}
-            selectedValue={formStates.sellSelectedValue}
-            selectedDates={[formStates.sellStartDate, formStates.sellEndDate]}
-            salesOnChange={(e) => handleChange({ sellSelectedValue: e.target.value })}
-            datesOnChangeList={[
-              (e) => handleChange({ sellStartDate: e.target.value }),
-              (e) => handleChange({ sellEndDate: e.target.value }),
-            ]}
-          />
+          <SalesPeriod info={SET_SALES} formStates={formStates} handleChange={handleChange} />
         </Item>
       </Category>
       <Category title="상품 배송 설정">
@@ -85,8 +65,8 @@ export function RegisterGoods() {
             }}
           />
           <InputDatePeriod
-            description={SET_DELIVERY.DELIVERY_TIME.description}
-            nameList={SET_DELIVERY.DELIVERY_TIME.nameList}
+            info={SET_DELIVERY.DELIVERY_TIME}
+            formStates={formStates}
             onChangeList={[
               (e) => {
                 const StartBeforeEnd = validateStartBeforeEnd({
@@ -119,11 +99,10 @@ export function RegisterGoods() {
                 });
               },
             ]}
-            selectedDates={[formStates.orderDeliveryStartDate, formStates.orderDeliveryEndDate]}
           />
           <InputDatePeriod
-            description={SET_DELIVERY.DAWN_DELIVERY.description}
-            nameList={SET_DELIVERY.DAWN_DELIVERY.nameList}
+            info={SET_DELIVERY.DAWN_DELIVERY}
+            formStates={formStates}
             onChangeList={[
               (e) => {
                 const noDawnDateCollide = validateStartBeforeEnd({
@@ -138,11 +117,10 @@ export function RegisterGoods() {
                 }
               },
             ]}
-            selectedDates={[formStates.dawnDeliveryDate]}
           />
           <InputDatePeriod
-            description={SET_DELIVERY.NORMAL_DELIVERY.description}
-            nameList={SET_DELIVERY.NORMAL_DELIVERY.nameList}
+            info={SET_DELIVERY.NORMAL_DELIVERY}
+            formStates={formStates}
             onChangeList={[
               (e) => {
                 const noNormalDateCollide = validateStartBeforeEnd({
@@ -157,7 +135,6 @@ export function RegisterGoods() {
                 }
               },
             ]}
-            selectedDates={[formStates.normalDeliveryDate]}
           />
         </Item>
       </Category>
