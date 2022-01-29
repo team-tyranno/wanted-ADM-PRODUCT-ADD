@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
-export const Span = styled.span`
-  width: 100px;
-`;
-
 export const Container = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  color: grey;
-  gap: 10px;
+`;
+
+export const Label = styled.span`
+  width: 30%;
+  padding-left: 20px;
 `;
