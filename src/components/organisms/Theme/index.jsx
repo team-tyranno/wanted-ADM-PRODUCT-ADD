@@ -1,24 +1,27 @@
-import React, { useState } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { ThemeBox, ThemeSelected } from 'components';
-import { THEMES } from 'constants';
 import * as S from './style';
 
-export function Theme() {
-  const [themes, setThemes] = useState(THEMES);
-  const [checkedLists, setCheckedList] = useState([]);
-
+export function Theme({ formStates, handleChange }) {
   const onCheck = (key) => {
-    const edit = themes.map((category) =>
+    const edit = formStates.themes.map((category) =>
       category.key === key ? { ...category, isChecked: !category.isChecked } : category,
     );
-    setThemes(edit);
-    setCheckedList(edit.filter((category) => category.isChecked));
+    const checked = edit.filter((category) => category.isChecked);
+    handleChange({ themes: edit, checkedLists: checked });
   };
 
   return (
     <S.Container>
-      <ThemeBox themes={themes} onCheck={onCheck} />
-      <ThemeSelected checkedLists={checkedLists} onCheck={onCheck} />
+      <ThemeBox themes={formStates.themes} onCheck={onCheck} />
+      <ThemeSelected checkedLists={formStates.checkedLists} onCheck={onCheck} />
     </S.Container>
   );
 }
+
+Theme.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  formStates: PropTypes.object.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};

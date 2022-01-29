@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
-import { Input, InputLabelGroup, ButtonDelete, Button } from 'components';
+import { ButtonDelete, InputLabelGroup, Input, Button } from 'components';
 import { PRODUCT_INFO_DATA } from 'constants';
 import * as S from './style';
 
@@ -22,7 +22,7 @@ export function ProductInfo() {
           </S.Title>
           <S.Content>
             {PRODUCT_INFO_DATA.map(({ label, placeHolder }) => (
-              <InputLabelGroup title={label} placeHolder={placeHolder} key={nanoid().toString()} />
+              <InputLabelGroup key={nanoid().toString()} title={label} placeHolder={placeHolder} />
             ))}
             {columns.map((e) => (
               <S.InputDiv key={e}>
@@ -45,9 +45,9 @@ export function ProductInfo() {
         </S.Wrap>
       ))}
       <Button
-        content="+ 정보고시 추가"
         width="100%"
         height="45px"
+        content="+ 정보고시 추가"
         onClick={() => setInfos([...infos, nanoid()])}
       />
     </S.Container>

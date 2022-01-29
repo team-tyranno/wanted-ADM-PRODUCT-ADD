@@ -10,8 +10,7 @@ export function Modal({ content, onClick }) {
         <S.Buttons />
         <S.Body>{content}</S.Body>
         <S.Buttons>
-          <Button text="취소" width="70px" onClick={onClick} />
-          <Button text="확인" width="70px" onClick={onClick} />
+          <Button content="확인" width="70px" onClick={onClick} />
         </S.Buttons>
       </S.Container>
     </S.Background>

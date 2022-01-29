@@ -2,23 +2,26 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import * as S from './style';
 
-export function Input({ placeHolder, width, onChange, onBlur }) {
+export function Input({ width, placeHolder, onChange, onFocus, onBlur }) {
   return (
     <S.Container width={width}>
-      <S.Inp placeholder={placeHolder} onChange={onChange} onBlur={onBlur} />
+      <S.Inp placeholder={placeHolder} onChange={onChange} onFocus={onFocus} onBlur={onBlur} />
     </S.Container>
   );
 }
 
 Input.defaultProps = {
   width: null,
-  onBlur: null,
+  placeHolder: null,
   onChange: null,
+  onFocus: null,
+  onBlur: null,
 };
 
 Input.propTypes = {
-  placeHolder: PropTypes.string.isRequired,
   width: PropTypes.string,
-  onBlur: PropTypes.func,
-  onChange: PropTypes.func,
+  placeHolder: PropTypes.string,
+  onChange: PropTypes.oneOfType([null, PropTypes.func]),
+  onFocus: PropTypes.oneOfType([null, PropTypes.func]),
+  onBlur: PropTypes.oneOfType([null, PropTypes.func]),
 };

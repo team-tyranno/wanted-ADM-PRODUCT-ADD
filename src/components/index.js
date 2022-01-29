@@ -4,6 +4,7 @@ export { Item } from 'components/templates/Item';
 export { ItemWithTwoCol } from 'components/templates/ItemWithTwoCol';
 
 // Organisms
+export { FilterTag } from 'components/organisms/FilterTag';
 export { GoodsInformation } from 'components/organisms/GoodsInformation';
 export { GoodsName } from 'components/organisms/GoodsName';
 export { GoodsStock } from 'components/organisms/GoodsStock';
@@ -12,6 +13,7 @@ export { Modal } from 'components/organisms/Modal';
 export { ProductInfo } from 'components/organisms/ProductInfo';
 export { ProductOption } from 'components/organisms/ProductOption';
 export { SalesPeriod } from 'components/organisms/SalesPeriod';
+export { SaveBar } from 'components/organisms/SaveBar';
 export { Theme } from 'components/organisms/Theme';
 
 // Molecules
@@ -21,6 +23,8 @@ export { InputDatePeriod } from 'components/molecules/InputDatePeriod';
 export { InputLabelGroup } from 'components/molecules/InputLabelGroup';
 export { ProductOptionDetail } from 'components/molecules/ProductOptionDetail';
 export { ProductOptionImage } from 'components/molecules/ProductOptionImage';
+export { TagSelect } from 'components/molecules/TagSelect';
+export { TagSelected } from 'components/molecules/TagSelected';
 export { ThemeBox } from 'components/molecules/ThemeBox';
 export { ThemeSelected } from 'components/molecules/ThemeSelected';
 
@@ -36,3 +40,5 @@ export { Checkbox } from 'components/atoms/Checkbox';
 export { Input } from 'components/atoms/Input';
 export { InputDate } from 'components/atoms/InputDate';
 export { InputImage } from 'components/atoms/InputImage';
+export { SearchBox } from 'components/atoms/SearchBox';
+export { Tag } from 'components/atoms/Tag';

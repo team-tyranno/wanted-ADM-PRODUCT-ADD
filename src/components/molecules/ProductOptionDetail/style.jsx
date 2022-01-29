@@ -4,6 +4,7 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: space-between;
+
   height: 100%;
   border: 1px solid #ddd;
   border-radius: 4px;

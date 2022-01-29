@@ -12,6 +12,6 @@ export const Wrapper = styled.button`
 
   &:hover {
     background-color: #4609ad;
-    color: #ffffff;
+    color: #fff;
   }
 `;

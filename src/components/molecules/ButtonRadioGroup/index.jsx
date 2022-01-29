@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { ButtonRadio } from 'components';
+import { nanoid } from 'nanoid';
 import * as S from './style';
 
 export function ButtonRadioGroup({ name, valueList, selectedValue, onChange }) {
@@ -8,6 +9,7 @@ export function ButtonRadioGroup({ name, valueList, selectedValue, onChange }) {
     <S.Container>
       {valueList.map((value) => (
         <ButtonRadio
+          key={nanoid()}
           name={name}
           value={value}
           isChecked={selectedValue === value}

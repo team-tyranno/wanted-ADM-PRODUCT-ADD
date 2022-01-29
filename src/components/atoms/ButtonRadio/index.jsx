@@ -18,8 +18,8 @@ export function ButtonRadio({ name, value, isChecked, onChange }) {
 }
 
 ButtonRadio.propTypes = {
-  isChecked: PropTypes.bool.isRequired,
-  value: PropTypes.node.isRequired,
   name: PropTypes.string.isRequired,
+  value: PropTypes.node.isRequired,
+  isChecked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };

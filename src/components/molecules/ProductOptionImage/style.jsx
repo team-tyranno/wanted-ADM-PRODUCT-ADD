@@ -4,6 +4,7 @@ export const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+
   height: 240px;
   border: 1px solid #ddd;
   background-color: #dedede;
