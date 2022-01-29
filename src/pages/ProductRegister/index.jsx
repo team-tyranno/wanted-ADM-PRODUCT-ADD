@@ -15,10 +15,12 @@ import {
   SaveBar,
   Theme,
   InputDatePeriod,
+  ButtonAppend,
   ButtonSwitch,
 } from 'components';
 import { setError, validateStartBeforeEnd } from 'utils';
 import { INITIAL_STATES, SET_EXPIRATION, SET_SALES, SET_DELIVERY } from 'constants';
+import * as S from './style';
 
 export function ProductRegister() {
   const [formStates, setFormStates] = useState(INITIAL_STATES);
@@ -38,7 +40,7 @@ export function ProductRegister() {
   };
 
   return (
-    <>
+    <S.Container>
       <SaveBar onClick={validateSubmit} />
       {openModal && <Modal content={modalText} onClick={() => setOpenModal(false)} />}
 
@@ -79,6 +81,10 @@ export function ProductRegister() {
 
       {/* 10~12 */}
       <Category title="상품 옵션*">
+        <div className="append-set">
+          <ButtonAppend width="130px" height="40px" content="+ 옵션 세트 추가" />
+        </div>
+
         <ProductOption />
       </Category>
 
@@ -239,6 +245,6 @@ export function ProductRegister() {
           />
         </Item>
       </Category>
-    </>
+    </S.Container>
   );
 }

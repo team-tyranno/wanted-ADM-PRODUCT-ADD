@@ -10,4 +10,8 @@ export const Wrapper = styled.section`
   background-color: #dedede;
   background-position: center;
   background-size: cover;
+
+  label {
+    background-color: rgba(222, 222, 222, 0.5);
+  }
 `;
