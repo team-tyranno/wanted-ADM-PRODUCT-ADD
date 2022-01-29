@@ -14,7 +14,7 @@
     상품 등록 페이지를 구현한 과제입니다.
     <br />
     <br />
-    <a href="friendly-engelbart-d4927f"><strong>배포 링크</strong></a>
+    <a href="https://friendly-engelbart-d4927f.netlify.app/"><strong>배포 링크</strong></a>
   </p>
 </div>
 
