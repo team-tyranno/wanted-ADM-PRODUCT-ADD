@@ -12,13 +12,14 @@ export function Input({ width, placeHolder, onChange, onBlur }) {
 
 Input.defaultProps = {
   width: null,
+  placeHolder: null,
   onChange: null,
   onBlur: null,
 };
 
 Input.propTypes = {
   width: PropTypes.string,
-  placeHolder: PropTypes.string.isRequired,
+  placeHolder: PropTypes.string,
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
 };

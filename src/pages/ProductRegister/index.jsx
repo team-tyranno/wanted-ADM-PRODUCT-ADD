@@ -13,21 +13,32 @@ import {
   GoodsInformation,
   GoodsStock,
   ItemWithTwoCol,
+  SaveBar,
 } from 'components';
-import { validateStartBeforeEnd } from 'utils';
+import { validateStartBeforeEnd, setError } from 'utils';
 import { SET_EXPIRATION, SET_SALES, SET_DELIVERY, INITIAL_STATES } from 'constants';
 
 export function ProductRegister() {
   const [formStates, setFormStates] = useState(INITIAL_STATES);
   const [openModal, setOpenModal] = useState(false);
+  const [modalText, setModalText] = useState('');
   const handleChange = (newStates) => {
     setFormStates({ ...formStates, ...newStates });
   };
 
+  const validateSubmit = () => {
+    const message = setError(formStates);
+    if (message !== '') {
+      setModalText(message);
+      setOpenModal(true);
+    }
+  };
+
   return (
     <>
+      <SaveBar onClick={validateSubmit} />
+      {openModal && <Modal text={modalText} onClick={() => setOpenModal(false)} />}
       {/* 1~2 */}
-      {openModal && <Modal text="입력해주세요" onClick={() => setOpenModal(false)} />}
       <Category title="노출 및 판매기간 설정">
         <Item title="상품 노출 기한">
           <SalesPeriod info={SET_EXPIRATION} formStates={formStates} handleChange={handleChange} />
@@ -40,13 +51,13 @@ export function ProductRegister() {
       {/* 3~9 */}
       <Category title="상품 기본 정보">
         <Item title="카테고리">
-          <Theme />
+          <Theme formStates={formStates} handleChange={handleChange} />
         </Item>
         <ItemWithTwoCol>
-          <GoodsName />
+          <GoodsName formStates={formStates} handleChange={handleChange} />
         </ItemWithTwoCol>
         <Item title="상품 구성 소개 정보">
-          <GoodsInformation />
+          <GoodsInformation handleChange={handleChange} />
         </Item>
         <Item title="상품 대표 이미지">
           <ImageAppender isMulti />
@@ -116,6 +127,7 @@ export function ProductRegister() {
           <InputDatePeriod
             info={SET_DELIVERY.DELIVERY_TIME}
             formStates={formStates}
+            disabled={!formStates.isReserveDeliveryChecked && true}
             onChangeList={[
               (e) => {
                 const StartBeforeEnd = validateStartBeforeEnd({
@@ -152,6 +164,7 @@ export function ProductRegister() {
           <InputDatePeriod
             info={SET_DELIVERY.DAWN_DELIVERY}
             formStates={formStates}
+            disabled={!formStates.isReserveDeliveryChecked && true}
             onChangeList={[
               (e) => {
                 const noDawnDateCollide = validateStartBeforeEnd({
@@ -170,6 +183,7 @@ export function ProductRegister() {
           <InputDatePeriod
             info={SET_DELIVERY.NORMAL_DELIVERY}
             formStates={formStates}
+            disabled={!formStates.isReserveDeliveryChecked && true}
             onChangeList={[
               (e) => {
                 const noNormalDateCollide = validateStartBeforeEnd({
