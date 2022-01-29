@@ -87,12 +87,14 @@
 
 - [x] 노출 및 판매기간 설정
   - [x] 라디오 버튼 및 시간 인풋 구현
+  - [x] '노출 기간 설정', '판매 시간 설정' 미선택 시 날짜 입력 비활성화 
   - [x] 노출 시작 시간보다 빠른 종료 시간, 혹은 종료 시간보다 빠른 노출 시작 시간이 입력될 경우 인풋 초기화
 
 - [x] 상품 배송, 상품 혜택 허용 및 기타 설정
   - [x] 스위치 버튼 구현
   - [x] '사용자 배송일 출발일 지정' 혹은 '방문 수령' 을 활성화할 경우 '선 주문 예약 배송' 비활성화. 
   - [x] '선 주문 예약 배송' 활성화할 경우 '사용자 배송일 출발일 지정' 및 '방문 수령' 비활성화
+  - [x] '선 주문 예약 배송' 비활성화 시 날짜 입력 비활성화
 
 - [x] 상품 소개 이미지, 구매자 추천 이미지 업로드
   - [x] 이미지 업로드 시 업로드한 파일 리스트 구현
@@ -140,24 +142,21 @@ npm install npm@latest -g
 
 ## 프로젝트 구조
 
-프로젝트 구조를 작성할 영역입니다(Optional).
-
 ```bash
 ├── public
 │   ├── index.html
 ├── src
-│   ├── components   # Atomic Design에 따른 컴포넌트
-│   │   ├── atoms
-│   │   ├── molecules
-│   │   ├── organisms
-│   │   ├── templates
-│   ├── pages    # 전체 페이지 컴포넌트
-│   ├── styles   # global style
-│   ├── assets   # 이미지, 아이콘, 폰트
-│   ├── hooks
-│   ├── constants
-│   └── utils
-└── some_more_file.xxx
+    ├── components   # Atomic Design에 따른 컴포넌트
+    │   ├── atoms
+    │   ├── molecules
+    │   ├── organisms
+    │   ├── templates
+    ├── pages    # 전체 페이지 컴포넌트
+    ├── styles   # global style
+    ├── assets   # 이미지, 아이콘, 폰트
+    ├── constants # 상수
+    └── utils # validator 등의 유틸 함수
+
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
