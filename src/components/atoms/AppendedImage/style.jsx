@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
+export const Span = styled.span`
+  width: 150px;
+`;
+
 export const Container = styled.div`
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 5px;
+  color: grey;
+  gap: 10px;
 `;

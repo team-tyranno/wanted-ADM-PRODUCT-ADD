@@ -1,7 +1,7 @@
 // atoms
 export { Input } from 'components/atoms/Input';
 export { Button } from 'components/atoms/Button';
-export { AddedFile } from 'components/atoms/AddedFile';
+export { AppendedImage } from 'components/atoms/AppendedImage';
 export { InputImage } from 'components/atoms/InputImage';
 export { AppendButton } from 'components/atoms/AppendButton';
 export { ButtonRadio } from 'components/atoms/ButtonRadio';
@@ -13,12 +13,15 @@ export { ImageUploader } from 'components/molecules/ImageUploader';
 export { ButtonRadioGroup } from 'components/molecules/ButtonRadioGroup';
 export { InputDatePeriod } from 'components/molecules/InputDatePeriod';
 export { ProductOption } from 'components/molecules/ProductOption';
-export { FileList } from 'components/molecules/FileList';
+export { AppendedImageGroup } from 'components/molecules/AppendedImageGroup';
+export { InputLabelGroup } from 'components/molecules/InputLabelGroup';
 
 // organisms
-export { ImageAdder } from 'components/organisms/ImageAdder';
+export { ImageAppender } from 'components/organisms/ImageAppender';
 export { GoodsName } from 'components/organisms/GoodsName';
 export { SalesExposedPeriod } from 'components/organisms/SalesExposedPeriod';
+export { ProductInfo } from 'components/organisms/ProductInfo';
+export { Modal } from 'components/organisms/Modal';
 
 // templates
 export { Category } from 'components/templates/Category';
