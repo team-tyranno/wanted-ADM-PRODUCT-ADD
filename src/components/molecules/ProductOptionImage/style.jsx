@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.article`
+export const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
   height: 240px;
-  margin: 12px;
   border: 1px solid #ddd;
   background-color: #dedede;
+  background-position: center;
+  background-size: cover;
 `;
