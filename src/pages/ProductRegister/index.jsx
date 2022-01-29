@@ -17,6 +17,7 @@ import {
 } from 'components';
 import { validateStartBeforeEnd, setError } from 'utils';
 import { SET_EXPIRATION, SET_SALES, SET_DELIVERY, INITIAL_STATES } from 'constants';
+import { FilterTag } from '../../components/organisms/FilterTag/index';
 
 export function ProductRegister() {
   const [formStates, setFormStates] = useState(INITIAL_STATES);
@@ -52,6 +53,9 @@ export function ProductRegister() {
       <Category title="상품 기본 정보">
         <Item title="카테고리">
           <Theme formStates={formStates} handleChange={handleChange} />
+        </Item>
+        <Item title="필터 태그">
+          <FilterTag />
         </Item>
         <ItemWithTwoCol>
           <GoodsName formStates={formStates} handleChange={handleChange} />
