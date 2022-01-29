@@ -1,18 +1,11 @@
-import React from 'react';
-import { ImageAdder, Item, Theme } from 'components';
+import React, { useState } from 'react';
+import { ImageAppender, Category, ProductInfo, Modal } from 'components';
 
 function App() {
+
   return (
     <>
-      <Item>
-        <ImageAdder isMulti={false} />
-      </Item>
-      <Item>
-        <ImageAdder isMulti />
-      </Item>
-      <Item>
-        <Theme />
-      </Item>
+      <div>hello</div>
     </>
   );
 }

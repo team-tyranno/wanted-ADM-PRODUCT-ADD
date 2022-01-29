@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
 import PropTypes from 'prop-types';
-import { FileList, InputImage } from 'components';
+import { InputImage, AppendedImageGroup } from 'components';
 import * as S from './style';
 
-export function ImageAdder({ isMulti }) {
+export function ImageAppender({ isMulti }) {
   const [files, setFiles] = useState([]);
 
   const onChange = (e) => {
@@ -21,11 +21,11 @@ export function ImageAdder({ isMulti }) {
   return (
     <S.Container>
       <InputImage onChange={onChange} />
-      <FileList files={files} onDelete={onDelete} />
+      <AppendedImageGroup files={files} onDelete={onDelete} />
     </S.Container>
   );
 }
 
-ImageAdder.propTypes = {
+ImageAppender.propTypes = {
   isMulti: PropTypes.bool.isRequired,
 };

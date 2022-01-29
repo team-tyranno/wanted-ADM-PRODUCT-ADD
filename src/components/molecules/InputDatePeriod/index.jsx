@@ -4,25 +4,30 @@ import { InputDate } from 'components';
 
 import * as S from './style';
 
-export function InputDatePeriod({ nameAndCallback }) {
+export function InputDatePeriod({ info, formStates, onChangeList }) {
   return (
     <S.Container>
-      {nameAndCallback.map((el) => (
-        <InputDate name={el.name} onChange={el.onChange} />
+      {info.nameList.map((name, index) => (
+        <>
+          {index === 0 && info.description !== '' && (
+            <S.Description>{info.description}</S.Description>
+          )}
+          {index !== 0 && <S.Tilde>~</S.Tilde>}
+          <InputDate
+            name={name}
+            date={formStates[info.dateStates[index]]}
+            onChange={onChangeList[index]}
+          />
+        </>
       ))}
     </S.Container>
   );
 }
 
 InputDatePeriod.propTypes = {
-  nameAndCallback: PropTypes.arrayOf(PropTypes.object).isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  info: PropTypes.object.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  formStates: PropTypes.object.isRequired,
+  onChangeList: PropTypes.arrayOf(PropTypes.func).isRequired,
 };
-
-/*
-
-<InputDatePeriod
-  names={['startDate', 'endDate']}
-  onChangeFunctions={[() => console.log('input1'), () => console.log('input2')]}
-/>
-
-*/
