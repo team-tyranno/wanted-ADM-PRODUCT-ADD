@@ -1,8 +1,12 @@
 import React from 'react';
-import { ProductRegister } from 'pages';
 
 function App() {
-  return <ProductRegister />;
+  return (
+    <>
+      <div>hello</div>
+      <div>hello</div>
+    </>
+  );
 }
 
 export default App;
