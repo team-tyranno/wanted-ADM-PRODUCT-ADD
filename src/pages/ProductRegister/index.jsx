@@ -1,16 +1,33 @@
 import React, { useState } from 'react';
-import { Category, Item, SalesPeriod, ButtonSwitch, InputDatePeriod } from 'components';
+import {
+  Category,
+  Item,
+  SalesPeriod,
+  ButtonSwitch,
+  InputDatePeriod,
+  ImageAppender,
+  ProductInfo,
+  Modal,
+  Theme,
+  GoodsName,
+  GoodsInformation,
+  GoodsStock,
+  ItemWithTwoCol,
+} from 'components';
 import { validateStartBeforeEnd } from 'utils';
 import { SET_EXPIRATION, SET_SALES, SET_DELIVERY, INITIAL_STATES } from 'constants';
 
 export function ProductRegister() {
   const [formStates, setFormStates] = useState(INITIAL_STATES);
+  const [openModal, setOpenModal] = useState(false);
   const handleChange = (newStates) => {
     setFormStates({ ...formStates, ...newStates });
   };
 
   return (
     <>
+      {/* 1~2 */}
+      {openModal && <Modal text="입력해주세요" onClick={() => setOpenModal(false)} />}
       <Category title="노출 및 판매기간 설정">
         <Item title="상품 노출 기한">
           <SalesPeriod info={SET_EXPIRATION} formStates={formStates} handleChange={handleChange} />
@@ -19,6 +36,37 @@ export function ProductRegister() {
           <SalesPeriod info={SET_SALES} formStates={formStates} handleChange={handleChange} />
         </Item>
       </Category>
+
+      {/* 3~9 */}
+      <Category title="상품 기본 정보">
+        <Item title="카테고리">
+          <Theme />
+        </Item>
+        <ItemWithTwoCol>
+          <GoodsName />
+        </ItemWithTwoCol>
+        <Item title="상품 구성 소개 정보">
+          <GoodsInformation />
+        </Item>
+        <Item title="상품 대표 이미지">
+          <ImageAppender isMulti />
+        </Item>
+        <Item title="상품총 재고">
+          <GoodsStock />
+        </Item>
+      </Category>
+
+      {/* 13~15 */}
+      <Category title="상품 소개 이미지">
+        <ImageAppender isMulti={false} />
+      </Category>
+      <Category title="구매자 추천 이미지">
+        <ImageAppender isMulti={false} />
+      </Category>
+      <Category title="상품 정보 고시">
+        <ProductInfo />
+      </Category>
+      {/* 16~20 */}
       <Category title="상품 배송 설정">
         <Item title="사용자 배송일 출발일 지정">
           <ButtonSwitch
