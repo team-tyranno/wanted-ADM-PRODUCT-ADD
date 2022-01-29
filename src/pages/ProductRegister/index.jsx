@@ -63,6 +63,9 @@ export function ProductRegister() {
         <Item title="상품 구성 소개 정보">
           <GoodsInformation handleChange={handleChange} />
         </Item>
+        <Item title="상품 썸네일">
+          <ImageAppender />
+        </Item>
         <Item title="상품 대표 이미지">
           <ImageAppender isMulti />
         </Item>
