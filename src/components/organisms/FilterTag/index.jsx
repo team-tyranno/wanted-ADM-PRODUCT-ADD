@@ -43,7 +43,7 @@ export function FilterTag() {
           <TagSelect tags={tags} onCheck={onCheck} />
         </SearchBox>
       </S.Container>
-      <TagSelected tags={selected} onCheck={onCheck} />
+      {selected.length ? <TagSelected tags={selected} onCheck={onCheck} /> : null}
     </>
   );
 }
