@@ -16,6 +16,7 @@ export function SalesPeriod({ info, formStates, handleChange }) {
       <InputDatePeriod
         info={info.datesInfo}
         formStates={formStates}
+        disabled={formStates[info.salesInfo.salesState] !== info.salesInfo.valueList.slice(-1)[0]}
         onChangeList={info.datesInfo.dateStates.map((state, index) => {
           return (e) => {
             const StartBeforeEnd = validateStartBeforeEnd({
