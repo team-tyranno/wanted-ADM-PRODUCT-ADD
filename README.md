@@ -93,7 +93,13 @@
   - [x] 스위치 버튼 구현
   - [x] '사용자 배송일 출발일 지정' 혹은 '방문 수령' 을 활성화할 경우 '선 주문 예약 배송' 비활성화. 
   - [x] '선 주문 예약 배송' 활성화할 경우 '사용자 배송일 출발일 지정' 및 '방문 수령' 비활성화
-  
+
+- [x] 상품 소개 이미지, 구매자 추천 이미지 업로드
+  - [x] 이미지 업로드 시 업로드한 파일 리스트 구현
+  - [x] 업로드한 파일 리스트에서 삭제
+
+- [x] 상품 정보 고시
+  - [x] 항목 추가 및 삭제 구현
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -140,7 +146,14 @@ npm install npm@latest -g
 ├── public
 │   ├── index.html
 ├── src
-│   ├── components
+│   ├── components   # Atomic Design에 따른 컴포넌트
+│   │   ├── atoms
+│   │   ├── molecules
+│   │   ├── organisms
+│   │   ├── templates
+│   ├── pages    # 전체 페이지 컴포넌트
+│   ├── styles   # global style
+│   ├── assets   # 이미지, 아이콘, 폰트
 │   ├── hooks
 │   ├── constants
 │   └── utils
