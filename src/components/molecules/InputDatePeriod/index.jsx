@@ -15,7 +15,7 @@ export function InputDatePeriod({ info, formStates, onChangeList, disabled }) {
           {index !== 0 && <S.Tilde>~</S.Tilde>}
           <InputDate
             name={name}
-            date={formStates[info.dateStates[index]]}
+            date={disabled ? '' : formStates[info.dateStates[index]]}
             disabled={disabled}
             onChange={onChangeList[index]}
           />
