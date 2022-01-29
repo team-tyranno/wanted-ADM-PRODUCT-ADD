@@ -12,6 +12,7 @@ export function Input({ width, placeHolder, onChange, onFocus, onBlur }) {
 
 Input.defaultProps = {
   width: null,
+  placeHolder: null,
   onChange: null,
   onFocus: null,
   onBlur: null,
@@ -19,7 +20,7 @@ Input.defaultProps = {
 
 Input.propTypes = {
   width: PropTypes.string,
-  placeHolder: PropTypes.string.isRequired,
+  placeHolder: PropTypes.string,
   onChange: PropTypes.oneOfType([null, PropTypes.func]),
   onFocus: PropTypes.oneOfType([null, PropTypes.func]),
   onBlur: PropTypes.oneOfType([null, PropTypes.func]),

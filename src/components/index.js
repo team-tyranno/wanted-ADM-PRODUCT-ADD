@@ -33,6 +33,7 @@ export { ProductInfo } from 'components/organisms/ProductInfo';
 export { Modal } from 'components/organisms/Modal';
 export { GoodsInformation } from 'components/organisms/GoodsInformation';
 export { GoodsStock } from 'components/organisms/GoodsStock';
+export { SaveBar } from 'components/organisms/SaveBar';
 export { FilterTag } from 'components/organisms/FilterTag';
 
 // templates
