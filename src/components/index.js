@@ -8,8 +8,9 @@ export { ButtonRadio } from 'components/atoms/ButtonRadio';
 export { ButtonDelete } from 'components/atoms/ButtonDelete';
 export { InputDate } from 'components/atoms/InputDate';
 export { ButtonTheme } from 'components/atoms/ButtonTheme';
-
 export { ButtonSwitch } from 'components/atoms/ButtonSwitch';
+export { Tag } from 'components/atoms/Tag';
+export { SearchBox } from 'components/atoms/SearchBox';
 
 // molecules
 export { ImageUploader } from 'components/molecules/ImageUploader';
@@ -20,6 +21,8 @@ export { ThemeBox } from 'components/molecules/ThemeBox';
 export { ThemeSelected } from 'components/molecules/ThemeSelected';
 export { AppendedImageGroup } from 'components/molecules/AppendedImageGroup';
 export { InputLabelGroup } from 'components/molecules/InputLabelGroup';
+export { TagSelect } from 'components/molecules/TagSelect';
+export { TagSelected } from 'components/molecules/TagSelected';
 
 // organisms
 export { ImageAppender } from 'components/organisms/ImageAppender';
@@ -30,6 +33,7 @@ export { ProductInfo } from 'components/organisms/ProductInfo';
 export { Modal } from 'components/organisms/Modal';
 export { GoodsInformation } from 'components/organisms/GoodsInformation';
 export { GoodsStock } from 'components/organisms/GoodsStock';
+export { FilterTag } from 'components/organisms/FilterTag';
 
 // templates
 export { Category } from 'components/templates/Category';
