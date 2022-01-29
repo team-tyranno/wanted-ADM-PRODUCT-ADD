@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { ButtonWrapper } from './style';
+import * as S from './style';
 
 export function ButtonDelete({ width, height, borderColor, onClick }) {
   return (
-    <ButtonWrapper
+    <S.Wrapper
       type="button"
       width={width}
       height={height}
@@ -12,7 +12,7 @@ export function ButtonDelete({ width, height, borderColor, onClick }) {
       onClick={onClick}
     >
       삭제
-    </ButtonWrapper>
+    </S.Wrapper>
   );
 }
 

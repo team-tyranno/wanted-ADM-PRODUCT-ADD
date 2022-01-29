@@ -1,8 +1,7 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
-import { validateStartBeforeEnd } from 'utils';
-
+import PropTypes from 'prop-types';
 import { ButtonRadioGroup, InputDatePeriod } from 'components';
+import { validateStartBeforeEnd } from 'utils';
 
 export function SalesPeriod({ info, formStates, handleChange }) {
   return (
@@ -10,8 +9,8 @@ export function SalesPeriod({ info, formStates, handleChange }) {
       <ButtonRadioGroup
         name={info.salesInfo.name}
         valueList={info.salesInfo.valueList}
-        onChange={(e) => handleChange({ [info.salesInfo.salesState]: e.target.value })}
         selectedValue={formStates[info.salesInfo.salesState]}
+        onChange={(e) => handleChange({ [info.salesInfo.salesState]: e.target.value })}
       />
       <InputDatePeriod
         info={info.datesInfo}

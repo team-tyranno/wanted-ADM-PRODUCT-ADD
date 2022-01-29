@@ -1,23 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Btn } from './style';
+import * as S from './style';
 
-export function Button({ width, height, text, onClick }) {
+export function Button({ width, height, content, onClick }) {
   return (
-    <Btn width={width} height={height} onClick={onClick}>
-      {text}
-    </Btn>
+    <S.Btn width={width} height={height} onClick={onClick}>
+      {content}
+    </S.Btn>
   );
 }
 
 Button.propTypes = {
   width: PropTypes.string.isRequired,
   height: PropTypes.string,
-  text: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
   onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
-  onClick: null,
   height: null,
+  onClick: null,
 };

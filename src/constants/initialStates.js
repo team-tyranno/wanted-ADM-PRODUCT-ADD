@@ -1,4 +1,4 @@
-import { Themes } from 'constants';
+import { THEMES } from 'constants/themes';
 
 export const INITIAL_STATES = {
   // 1~2. 노출 및 판매기간 설정
@@ -10,7 +10,7 @@ export const INITIAL_STATES = {
   sellEndDate: '',
 
   // 3. 상품 기본 정보
-  themes: Themes,
+  themes: THEMES,
   checkedLists: [],
 
   // 4. 상품명

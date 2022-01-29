@@ -1,11 +1,11 @@
 import React from 'react';
 import { ButtonDelete } from 'components';
-import { OptionWrapper } from './style';
+import * as S from './style';
 
-export function ProductOption() {
+export function ProductOptionDetail() {
   return (
-    <OptionWrapper>
-      <div className="option-delete">
+    <S.Wrapper>
+      <div className="delete-option">
         <ButtonDelete width="60px" height="32px" />
       </div>
 
@@ -26,16 +26,16 @@ export function ProductOption() {
         </select>
       </div>
 
-      <div className="option-info appended">
+      <div className="suboption-info">
         <span>└</span>
         <input className="name" type="text" placeholder="추가 옵션명 (필수)" />
         <input className="price" type="text" placeholder="추가 옵션 정상가 (필수)" />원
         <ButtonDelete width="60px" height="42px" />
       </div>
 
-      <div className="option-append">
+      <div className="append-suboption">
         <button type="button">╋</button> 추가 옵션 상품 추가
       </div>
-    </OptionWrapper>
+    </S.Wrapper>
   );
 }

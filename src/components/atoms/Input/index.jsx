@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Inp } from './style';
+import * as S from './style';
 
 export function Input({ width, placeHolder, onChange, onFocus, onBlur }) {
   return (
-    <Container width={width}>
-      <Inp placeholder={placeHolder} onChange={onChange} onFocus={onFocus} onBlur={onBlur} />
-    </Container>
+    <S.Container width={width}>
+      <S.Inp placeholder={placeHolder} onChange={onChange} onFocus={onFocus} onBlur={onBlur} />
+    </S.Container>
   );
 }
 

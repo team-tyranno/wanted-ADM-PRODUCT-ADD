@@ -1,16 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { close } from 'assets';
-import { PropTypes } from 'prop-types';
 import * as S from './style';
 
 export function ButtonTheme({ text, onCheck }) {
   return (
-    <S.ButtonWrapper>
+    <S.Wrapper>
       {text}
       <button type="button" onClick={onCheck}>
         <img src={close} alt="delete" />
       </button>
-    </S.ButtonWrapper>
+    </S.Wrapper>
   );
 }
 

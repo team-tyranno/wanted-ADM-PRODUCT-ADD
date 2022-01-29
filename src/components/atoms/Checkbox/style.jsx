@@ -8,7 +8,7 @@ export const Container = styled.div`
     height: 30px;
 
     outline: none;
-    border: 1px solid #eeeeee;
+    border: 1px solid #ddd;
     border-radius: 2px;
     background: #fbfbfb;
   }
@@ -19,10 +19,10 @@ export const Container = styled.div`
 
   span {
     position: relative;
-    text-align: center;
-    font-size: 20px;
-
     bottom: 6px;
     left: 10px;
+
+    font-size: 20px;
+    text-align: center;
   }
 `;

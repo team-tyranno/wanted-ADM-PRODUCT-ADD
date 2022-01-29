@@ -4,8 +4,9 @@ import { nanoid } from 'nanoid';
 import * as S from './style';
 
 export function Checkbox({ theme, onCheck }) {
-  const { key, name, isChecked } = theme;
   const id = nanoid();
+  const { key, name, isChecked } = theme;
+
   return (
     <S.Container>
       <label htmlFor={id}>

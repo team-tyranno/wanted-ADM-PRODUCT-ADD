@@ -4,12 +4,13 @@ import { nanoid } from 'nanoid';
 import * as S from './style';
 
 export function InputImage({ onChange }) {
-  const idx = nanoid().toString();
+  const id = nanoid();
+
   return (
     <S.Wrapper>
-      <label htmlFor={idx}>
+      <label htmlFor={id}>
         + 이미지 첨부
-        <input id={idx} type="file" accept="image/*" onChange={onChange} />
+        <input id={id} type="file" accept="image/*" onChange={onChange} />
       </label>
     </S.Wrapper>
   );

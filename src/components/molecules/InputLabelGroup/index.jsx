@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Input } from 'components';
-import { PropTypes } from 'prop-types';
 import * as S from './style';
 
 export function InputLabelGroup({ title, placeHolder }) {

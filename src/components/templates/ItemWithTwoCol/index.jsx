@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper } from './style';
+import * as S from './style';
 
 export function ItemWithTwoCol({ children }) {
-  return <Wrapper>{children}</Wrapper>;
+  return <S.Wrapper>{children}</S.Wrapper>;
 }
 
 ItemWithTwoCol.propTypes = {

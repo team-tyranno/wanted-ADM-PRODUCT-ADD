@@ -1,6 +1,6 @@
 import { nanoid } from 'nanoid';
 
-export const Themes = [
+export const THEMES = [
   { key: nanoid(), name: '목심', isChecked: false },
   { key: nanoid(), name: '채끝', isChecked: false },
   { key: nanoid(), name: '안심', isChecked: false },

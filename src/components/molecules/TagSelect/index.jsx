@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Tag } from 'components';
@@ -15,6 +14,7 @@ export function TagSelect({ tags, onCheck }) {
 }
 
 TagSelect.propTypes = {
+  /* eslint-disable react/forbid-prop-types */
   tags: PropTypes.array.isRequired,
   onCheck: PropTypes.func.isRequired,
 };

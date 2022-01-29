@@ -8,10 +8,10 @@ export const Input = styled.input`
 
 export const Label = styled.label`
   position: relative;
-  height: 16px;
-  width: 50px;
-  border-radius: 50px;
   display: inline-block;
+  width: 50px;
+  height: 16px;
+  border-radius: 50px;
 
   transition: background 0.2s linear;
   background: linear-gradient(to right, #aea8e6 50%, #9f9f9f 50%);
@@ -22,12 +22,12 @@ export const Label = styled.label`
 
 export const Ball = styled.div`
   position: absolute;
-  height: 22px;
-  width: 22px;
-  border-radius: 50%;
-  box-shadow: -0.5px 0.5px 2px rgba(0, 0, 0, 0.6);
   top: -3px;
   left: 0px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  box-shadow: -0.5px 0.5px 2px rgba(0, 0, 0, 0.6);
 
   transition: transform 0.2s linear;
   transform: translateX(${(props) => (props.isChecked ? '29px' : '0px')});

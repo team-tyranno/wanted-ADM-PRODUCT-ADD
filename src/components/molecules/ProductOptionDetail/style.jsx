@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const OptionWrapper = styled.article`
+export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: space-between;
+
   height: 100%;
-  margin: 12px;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 12px;
@@ -14,7 +14,7 @@ export const OptionWrapper = styled.article`
   div {
     margin-block-end: 16px;
 
-    &.option-delete {
+    &.delete-option {
       margin-left: auto;
     }
 
@@ -62,27 +62,39 @@ export const OptionWrapper = styled.article`
         padding: 0 8px;
         font-size: 15px;
       }
+    }
 
-      &.appended {
-        span {
-          margin-right: -20px;
-          color: #ddd;
-          font-size: 36px;
+    &.suboption-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 15px;
+
+      span {
+        margin-right: -20px;
+        color: #ddd;
+        font-size: 36px;
+      }
+
+      input {
+        height: 42px;
+        margin-right: -20px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding-left: 12px;
+        font-size: 15px;
+
+        &.name {
+          width: 400px;
         }
 
-        input {
-          &.name {
-            width: 400px;
-          }
-
-          &.price {
-            width: 200px;
-          }
+        &.price {
+          width: 200px;
         }
       }
     }
 
-    &.option-append {
+    &.append-suboption {
       display: flex;
       align-items: center;
       margin-right: auto;

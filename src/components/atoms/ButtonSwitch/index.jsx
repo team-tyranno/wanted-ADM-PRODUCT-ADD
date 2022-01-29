@@ -1,6 +1,5 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
-
+import PropTypes from 'prop-types';
 import * as S from './style';
 
 export function ButtonSwitch({ id, isChecked, onChange }) {
@@ -19,15 +18,3 @@ ButtonSwitch.propTypes = {
   isChecked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };
-
-/*
-const [checked, setChecked] = useState(false);
-
-<ButtonSwitch
-  id="test"
-  isChecked={checked}
-  onChange={() => {
-    setChecked(!checked);
-  }}
-/>
-*/

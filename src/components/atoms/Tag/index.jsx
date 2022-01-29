@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { close } from 'assets';
 import * as S from './style';
 
-export function Tag({ tag, onCheck, isSelectedFilter }) {
+export function Tag({ tag, isSelectedFilter, onCheck }) {
   return (
     <S.Container onClick={() => onCheck(tag.key)}>
       {tag.name}
@@ -12,12 +12,12 @@ export function Tag({ tag, onCheck, isSelectedFilter }) {
   );
 }
 
-Tag.defaultProps = {
-  isSelectedFilter: false,
-};
-
 Tag.propTypes = {
   tag: PropTypes.string.isRequired,
-  onCheck: PropTypes.func.isRequired,
   isSelectedFilter: PropTypes.bool,
+  onCheck: PropTypes.func.isRequired,
+};
+
+Tag.defaultProps = {
+  isSelectedFilter: false,
 };

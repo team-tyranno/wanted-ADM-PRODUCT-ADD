@@ -8,12 +8,13 @@ export const Wrapper = styled.div`
     font-size: 16px;
     cursor: pointer;
 
+    input {
+      display: none;
+    }
+
     &:hover {
       background-color: #4609ad;
       color: #ffffff;
     }
-  }
-  input {
-    display: none;
   }
 `;

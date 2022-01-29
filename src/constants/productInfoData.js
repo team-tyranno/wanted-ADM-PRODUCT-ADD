@@ -1,4 +1,4 @@
-export const ProductInfoData = [
+export const PRODUCT_INFO_DATA = [
   {
     label: '제품명 / 중량',
     placeHolder: '제품명 / 중량을 입력해 주세요.',

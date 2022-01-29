@@ -9,7 +9,7 @@ export function TagSelected({ tags, onCheck }) {
       <div className="tag-title">지정된 필터 태그</div>
       <S.TagWrapper>
         {tags.map((tag) => (
-          <Tag key={tag.key} tag={tag} onCheck={onCheck} isSelectedFilter />
+          <Tag key={tag.key} tag={tag} isSelectedFilter onCheck={onCheck} />
         ))}
       </S.TagWrapper>
     </S.Container>

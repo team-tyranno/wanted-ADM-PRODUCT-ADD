@@ -6,10 +6,10 @@ export const Container = styled.div`
 `;
 
 export const Description = styled.span`
-  vertical-align: middle;
   display: inline-flex;
   align-items: center;
   margin-right: 10px;
+  vertical-align: middle;
 `;
 
 export const Tilde = styled.span`

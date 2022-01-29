@@ -4,9 +4,9 @@ import { TAGS } from 'constants';
 import * as S from './style';
 
 export function FilterTag() {
-  const [selected, setSelected] = useState([]);
-  const [tags, setTags] = useState(TAGS.filter((tag) => !tag.isSelected));
   const [show, setShow] = useState('none');
+  const [tags, setTags] = useState(TAGS.filter((tag) => !tag.isSelected));
+  const [selected, setSelected] = useState([]);
 
   const onChange = (e) => {
     setTags(TAGS.filter((tag) => tag.name.toLowerCase().includes(e.target.value)));
@@ -25,6 +25,7 @@ export function FilterTag() {
       tag.key === key ? { ...tag, isSelected: !tag.isSelected } : tag,
     );
     setTags([...check]);
+
     const set = new Set(check.filter((tag) => tag.isSelected));
     setSelected([...set]);
     setShow('none');

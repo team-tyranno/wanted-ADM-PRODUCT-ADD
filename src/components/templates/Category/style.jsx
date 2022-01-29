@@ -1,24 +1,16 @@
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
-  width: 70%;
-  border: 1px solid #eee;
+export const Wrapper = styled.section`
+  position: relative;
+  width: 900px;
+  margin: 40px 0 0 20px;
+  border: 1px solid #ddd;
 
-  .category--title {
+  .category-title {
     width: 100%;
-    padding: 10px 20px;
-
-    text-align: center;
-
-    box-sizing: border-box;
-    border-bottom: 1px solid #eee;
-
-    font-size: 20px;
-  }
-
-  .item--content {
-    padding: 20px 5px;
-
-    box-sizing: border-box;
+    border-bottom: 1px solid #ddd;
+    padding: 14px 20px 10px;
+    font-size: 16px;
+    font-weight: 500;
   }
 `;

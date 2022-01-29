@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Checkbox } from 'components/atoms/Checkbox';
+import { Checkbox } from 'components';
 import * as S from './style';
 
 export function ThemeBox({ themes, onCheck }) {

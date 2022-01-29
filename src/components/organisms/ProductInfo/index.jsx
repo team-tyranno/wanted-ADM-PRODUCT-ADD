@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Input, InputLabelGroup, ButtonDelete, Button } from 'components';
-import { ProductInfoData } from 'constants';
 import { nanoid } from 'nanoid';
+import { ButtonDelete, InputLabelGroup, Input, Button } from 'components';
+import { PRODUCT_INFO_DATA } from 'constants';
 import * as S from './style';
 
 export function ProductInfo() {
-  const [infos, setInfos] = useState([nanoid()]); // [nanoid, nanoid, ...]
+  const [infos, setInfos] = useState([nanoid()]);
   const [columns, setColumns] = useState([nanoid()]);
 
   return (
@@ -21,8 +21,8 @@ export function ProductInfo() {
             />
           </S.Title>
           <S.Content>
-            {ProductInfoData.map(({ label, placeHolder }) => (
-              <InputLabelGroup title={label} placeHolder={placeHolder} key={nanoid().toString()} />
+            {PRODUCT_INFO_DATA.map(({ label, placeHolder }) => (
+              <InputLabelGroup key={nanoid().toString()} title={label} placeHolder={placeHolder} />
             ))}
             {columns.map((e) => (
               <S.InputDiv key={e}>
@@ -38,22 +38,18 @@ export function ProductInfo() {
             ))}
             <Button
               width="130px"
-              text="+ 항목 추가"
+              content="+ 항목 추가"
               onClick={() => setColumns([...columns, nanoid()])}
             />
           </S.Content>
         </S.Wrap>
       ))}
       <Button
-        text="+ 정보고시 추가"
         width="100%"
         height="45px"
+        content="+ 정보고시 추가"
         onClick={() => setInfos([...infos, nanoid()])}
       />
     </S.Container>
   );
 }
-
-// ProductInfo.propTypes = {
-//   children: PropTypes.node.isRequired,
-// };

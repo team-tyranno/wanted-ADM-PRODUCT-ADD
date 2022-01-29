@@ -1,11 +1,10 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
+import PropTypes from 'prop-types';
 import { InputDate } from 'components';
 import { nanoid } from 'nanoid';
-
 import * as S from './style';
 
-export function InputDatePeriod({ info, formStates, onChangeList, disabled }) {
+export function InputDatePeriod({ info, formStates, disabled, onChangeList }) {
   return (
     <S.Container>
       {info.nameList.map((name, index) => (
@@ -31,6 +30,6 @@ InputDatePeriod.propTypes = {
   info: PropTypes.object.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   formStates: PropTypes.object.isRequired,
-  onChangeList: PropTypes.arrayOf(PropTypes.func).isRequired,
   disabled: PropTypes.bool.isRequired,
+  onChangeList: PropTypes.arrayOf(PropTypes.func).isRequired,
 };

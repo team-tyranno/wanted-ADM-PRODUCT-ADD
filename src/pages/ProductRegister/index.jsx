@@ -2,27 +2,31 @@ import React, { useState } from 'react';
 import {
   Category,
   Item,
-  SalesPeriod,
-  ButtonSwitch,
-  InputDatePeriod,
-  ImageAppender,
-  ProductInfo,
-  Modal,
-  Theme,
-  GoodsName,
-  GoodsInformation,
-  GoodsStock,
   ItemWithTwoCol,
+  FilterTag,
+  GoodsInformation,
+  GoodsName,
+  GoodsStock,
+  ImageAppender,
+  Modal,
+  ProductInfo,
+  ProductOption,
+  SalesPeriod,
   SaveBar,
+  Theme,
+  InputDatePeriod,
+  ButtonAppend,
+  ButtonSwitch,
 } from 'components';
-import { validateStartBeforeEnd, setError } from 'utils';
-import { SET_EXPIRATION, SET_SALES, SET_DELIVERY, INITIAL_STATES } from 'constants';
-import { FilterTag } from '../../components/organisms/FilterTag/index';
+import { setError, validateStartBeforeEnd } from 'utils';
+import { INITIAL_STATES, SET_EXPIRATION, SET_SALES, SET_DELIVERY } from 'constants';
+import * as S from './style';
 
 export function ProductRegister() {
   const [formStates, setFormStates] = useState(INITIAL_STATES);
   const [openModal, setOpenModal] = useState(false);
   const [modalText, setModalText] = useState('');
+
   const handleChange = (newStates) => {
     setFormStates({ ...formStates, ...newStates });
   };
@@ -36,9 +40,10 @@ export function ProductRegister() {
   };
 
   return (
-    <>
+    <S.Container>
       <SaveBar onClick={validateSubmit} />
-      {openModal && <Modal text={modalText} onClick={() => setOpenModal(false)} />}
+      {openModal && <Modal content={modalText} onClick={() => setOpenModal(false)} />}
+
       {/* 1~2 */}
       <Category title="노출 및 판매기간 설정">
         <Item title="상품 노출 기한">
@@ -74,6 +79,15 @@ export function ProductRegister() {
         </Item>
       </Category>
 
+      {/* 10~12 */}
+      <Category title="상품 옵션*">
+        <div className="append-set">
+          <ButtonAppend width="130px" height="40px" content="+ 옵션 세트 추가" />
+        </div>
+
+        <ProductOption />
+      </Category>
+
       {/* 13~15 */}
       <Category title="상품 소개 이미지">
         <ImageAppender isMulti={false} />
@@ -84,6 +98,7 @@ export function ProductRegister() {
       <Category title="상품 정보 고시">
         <ProductInfo />
       </Category>
+
       {/* 16~20 */}
       <Category title="상품 배송 설정">
         <Item title="사용자 배송일 출발일 지정">
@@ -133,8 +148,8 @@ export function ProductRegister() {
 
           <InputDatePeriod
             info={SET_DELIVERY.DELIVERY_TIME}
-            formStates={formStates}
             disabled={!formStates.isReserveDeliveryChecked && true}
+            formStates={formStates}
             onChangeList={[
               (e) => {
                 const StartBeforeEnd = validateStartBeforeEnd({
@@ -170,8 +185,8 @@ export function ProductRegister() {
           />
           <InputDatePeriod
             info={SET_DELIVERY.DAWN_DELIVERY}
-            formStates={formStates}
             disabled={!formStates.isReserveDeliveryChecked && true}
+            formStates={formStates}
             onChangeList={[
               (e) => {
                 const noDawnDateCollide = validateStartBeforeEnd({
@@ -189,8 +204,8 @@ export function ProductRegister() {
           />
           <InputDatePeriod
             info={SET_DELIVERY.NORMAL_DELIVERY}
-            formStates={formStates}
             disabled={!formStates.isReserveDeliveryChecked && true}
+            formStates={formStates}
             onChangeList={[
               (e) => {
                 const noNormalDateCollide = validateStartBeforeEnd({
@@ -230,6 +245,6 @@ export function ProductRegister() {
           />
         </Item>
       </Category>
-    </>
+    </S.Container>
   );
 }

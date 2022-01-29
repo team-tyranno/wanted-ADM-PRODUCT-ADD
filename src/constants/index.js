@@ -1,7 +1,7 @@
-export { BUTTON_SIZE } from './ButtonSize';
-export { TAGS } from './Tags';
-export { Themes } from './Themes';
-export { SET_EXPIRATION, SET_SALES } from './salesPeriod';
-export { SET_DELIVERY } from './deliveryPeriod';
-export { INITIAL_STATES } from './initialStates';
-export { ProductInfoData } from './ProductInfoData';
+export { BUTTON_SIZE } from 'constants/buttonSize';
+export { SET_DELIVERY } from 'constants/deliveryPeriod';
+export { INITIAL_STATES } from 'constants/initialStates';
+export { PRODUCT_INFO_DATA } from 'constants/productInfoData';
+export { SET_EXPIRATION, SET_SALES } from 'constants/salesPeriod';
+export { TAGS } from 'constants/tags';
+export { THEMES } from 'constants/themes';

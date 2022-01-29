@@ -1,9 +1,8 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
-
+import PropTypes from 'prop-types';
 import * as S from './style';
 
-export function ButtonRadio({ isChecked, value, name, onChange }) {
+export function ButtonRadio({ name, value, isChecked, onChange }) {
   return (
     <S.Container>
       <S.RadioButton
@@ -19,8 +18,8 @@ export function ButtonRadio({ isChecked, value, name, onChange }) {
 }
 
 ButtonRadio.propTypes = {
-  isChecked: PropTypes.bool.isRequired,
-  value: PropTypes.node.isRequired,
   name: PropTypes.string.isRequired,
+  value: PropTypes.node.isRequired,
+  isChecked: PropTypes.bool.isRequired,
   onChange: PropTypes.func.isRequired,
 };

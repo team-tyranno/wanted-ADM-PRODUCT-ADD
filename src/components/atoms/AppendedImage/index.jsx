@@ -1,6 +1,6 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
-import CircleX from 'assets/icons/CircleX';
+import PropTypes from 'prop-types';
+import { CircleX } from 'assets';
 import * as S from './style';
 
 export function AppendedImage({ title, onDelete }) {
