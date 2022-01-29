@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
-import { ImageAppender, Category, ProductInfo, Modal } from 'components';
+import React from 'react';
+import { GoodsInformation, Item } from 'components';
 
 function App() {
-
   return (
     <>
+      <Item>
+        <GoodsInformation />
+      </Item>
+      <div>hello</div>
       <div>hello</div>
     </>
   );
