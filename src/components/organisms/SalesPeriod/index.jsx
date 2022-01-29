@@ -1,5 +1,6 @@
 import React from 'react';
 import { PropTypes } from 'prop-types';
+import { validateStartBeforeEnd } from 'utils';
 
 import { ButtonRadioGroup, InputDatePeriod } from 'components';
 
@@ -15,8 +16,22 @@ export function SalesPeriod({ info, formStates, handleChange }) {
       <InputDatePeriod
         info={info.datesInfo}
         formStates={formStates}
-        onChangeList={info.datesInfo.dateStates.map((state) => {
-          return (e) => handleChange({ [state]: e.target.value });
+        onChangeList={info.datesInfo.dateStates.map((state, index) => {
+          return (e) => {
+            const StartBeforeEnd = validateStartBeforeEnd({
+              startDate: index === 0 ? e.target.value : formStates[info.datesInfo.dateStates[0]],
+              endDate: index !== 0 ? e.target.value : formStates[info.datesInfo.dateStates[index]],
+            });
+
+            const statesChanged = {};
+            if (!StartBeforeEnd) {
+              info.datesInfo.dateStates.forEach((el) => {
+                if (el !== formStates[state]) statesChanged[el] = '';
+              });
+            }
+            statesChanged[state] = e.target.value;
+            handleChange(statesChanged);
+          };
         })}
       />
     </>
