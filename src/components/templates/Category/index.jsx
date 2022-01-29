@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Wrapper } from './style';
+import * as S from './style';
 
 export function Category({ title, children }) {
   return (
-    <Wrapper>
-      <div className="category--title">{title}</div>
+    <S.Wrapper>
+      <div className="category-title">{title}</div>
       {children}
-    </Wrapper>
+    </S.Wrapper>
   );
 }
 

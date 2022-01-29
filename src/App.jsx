@@ -1,20 +1,8 @@
 import React from 'react';
-import { ImageAdder, Item } from 'components';
+import { ProductRegister } from 'pages';
 
 function App() {
-  return (
-    <>
-      <Item>
-        <ImageAdder isMulti={false} />
-      </Item>
-      <Item>
-        <ImageAdder isMulti />
-      </Item>
-      <Item>
-        <ImageAdder isMulti={false} />
-      </Item>
-    </>
-  );
+  return <ProductRegister />;
 }
 
 export default App;

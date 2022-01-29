@@ -11,7 +11,7 @@
   <h3 align="center">2주차 과제 - 설로인</h3>
 
   <p align="center">
-    <a href="https://github.com/othneildrew/Best-README-Template">Best-README-Template</a>을 참고하여 만들어 본 README 템플릿입니다. 확인하시고 의견 주시면 감사하겠습니다!
+    상품 등록 페이지를 구현한 과제입니다.
     <br />
     <br />
     <a href="friendly-engelbart-d4927f"><strong>배포 링크</strong></a>
@@ -60,10 +60,10 @@
 <td align="center"><b>김재원</b></td>
 </tr>
 <tr>
-<td align="center"><b>FE Developer</b></td>
-<td align="center"><b>FE Developer</b></td>
-<td align="center"><b>FE Developer</b></td>
-<td align="center"><b>FE Developer</b></td>
+<td align="center"><b>항목 1~2, 16~20 구현</b></td>
+<td align="center"><b>항목 12~15 구현</b></td>
+<td align="center"><b>항목 3~9 구현</b></td>
+<td align="center"><b>항목 10~12 구현</b></td>
 </tr>
 </table>
 
@@ -73,15 +73,9 @@
 
 ## 과제 소개
 
-간략한 과제 소개 및 jpg, gif가 들어갈 영역입니다.
+주어진 명세서에 따라 상품 등록을 위한 페이지를 구현한 과제입니다.
 
-- 과제 소개 1
-
-![slider](https://user-images.githubusercontent.com/28294925/150082839-44f592e6-bdaa-4081-9281-12075b2c60d0.gif)
-
-- 과제 소개 2
-
-![responsive](https://user-images.githubusercontent.com/28294925/150082899-efbb1c3d-fd02-4134-8948-05d14bcb28de.gif)
+- 가능한 라이브러리를 사용하지 않고 과제를 수행하는 것을 목표로 했습니다
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -91,15 +85,15 @@
 
 ## 구현한 기능
 
-구현한 기능 목록을 작성할 영역입니다.
+- [x] 노출 및 판매기간 설정
 
-- [x] 기능 1
-- [x] 기능 2
-  - [x] 세부기능 2-1
-  - [x] 세부기능 2-2
-- [x] 기능 3
-  - [x] 세부기능 3-1
-  - [x] 세부기능 3-2
+  - [x] 라디오 버튼 및 시간 인풋 구현
+  - [x] 노출 시작 시간보다 빠른 종료 시간, 혹은 종료 시간보다 빠른 노출 시작 시간이 입력될 경우 인풋 초기화
+
+- [x] 상품 배송, 상품 혜택 허용 및 기타 설정
+  - [x] 스위치 버튼 구현
+  - [x] '사용자 배송일 출발일 지정' 혹은 '방문 수령' 을 활성화할 경우 '선 주문 예약 배송' 비활성화.
+  - [x] '선 주문 예약 배송' 활성화할 경우 '사용자 배송일 출발일 지정' 및 '방문 수령' 비활성화
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -108,8 +102,6 @@
 <br>
 
 ## 설치 및 실행
-
-배포 링크가 동작하지 않을 시, local에서 프로젝트를 실행하는 방법을 작성할 영역입니다.
 
 ### Prerequisites
 

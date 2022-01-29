@@ -4,6 +4,7 @@ export const Wrapper = styled.button`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   border: 1px solid #dc3444;
+  border-color: ${(props) => props.borderColor};
   border-radius: 4px;
   background-color: #fff;
   color: #dc3444;
@@ -12,6 +13,6 @@ export const Wrapper = styled.button`
 
   &:hover {
     background-color: #dc3444;
-    color: #ffffff;
+    color: #fff;
   }
 `;
