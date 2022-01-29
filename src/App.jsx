@@ -1,13 +1,8 @@
-import React, { useState } from 'react';
-import { ImageAppender, Category, ProductInfo, Modal } from 'components';
+import React from 'react';
+import { ProductRegister } from 'pages';
 
 function App() {
-
-  return (
-    <>
-      <div>hello</div>
-    </>
-  );
+  return <ProductRegister />;
 }
 
 export default App;
