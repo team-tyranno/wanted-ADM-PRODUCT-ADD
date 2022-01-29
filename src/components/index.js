@@ -29,6 +29,7 @@ export { Theme } from 'components/organisms/Theme';
 export { ProductInfo } from 'components/organisms/ProductInfo';
 export { Modal } from 'components/organisms/Modal';
 export { GoodsInformation } from 'components/organisms/GoodsInformation';
+export { GoodsStock } from 'components/organisms/GoodsStock';
 
 // templates
 export { Category } from 'components/templates/Category';
