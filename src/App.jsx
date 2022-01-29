@@ -1,8 +1,8 @@
 import React from 'react';
-import { RegisterGoods } from 'pages';
+import { ProductRegister } from 'pages';
 
 function App() {
-  return <RegisterGoods />;
+  return <ProductRegister />;
 }
 
 export default App;

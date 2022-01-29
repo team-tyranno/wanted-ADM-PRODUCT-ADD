@@ -1,1 +1,1 @@
-export { RegisterGoods } from 'pages/RegisterGoods';
+export { ProductRegister } from 'pages/ProductRegister';

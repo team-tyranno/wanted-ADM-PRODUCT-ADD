@@ -3,7 +3,7 @@ import { Category, Item, SalesPeriod, ButtonSwitch, InputDatePeriod } from 'comp
 import { validateStartBeforeEnd } from 'utils';
 import { SET_EXPIRATION, SET_SALES, SET_DELIVERY, INITIAL_STATES } from 'constants';
 
-export function RegisterGoods() {
+export function ProductRegister() {
   const [formStates, setFormStates] = useState(INITIAL_STATES);
   const handleChange = (newStates) => {
     setFormStates({ ...formStates, ...newStates });
