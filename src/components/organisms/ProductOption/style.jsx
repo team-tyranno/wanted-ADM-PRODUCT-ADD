@@ -9,17 +9,18 @@ export const Container = styled.div`
   padding-top: 32px;
   background-color: rgba(238, 238, 238, 0.5);
 
-  .append-set {
-    position: absolute;
-    top: -41px;
-    right: 0;
-  }
-
   .default-text {
     position: absolute;
     top: 250px;
     left: 50%;
     transform: translate(-50%, -50%);
+    font-size: 18px;
+  }
+
+  .append-set {
+    position: absolute;
+    top: -41px;
+    right: 0;
   }
 `;
 
