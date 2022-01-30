@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { nanoid } from 'nanoid';
-import { ButtonAppend, ButtonDelete, ProductOptionImage, ProductOptionDetail } from 'components';
+import { ButtonAppend, ButtonDelete, ProductOptionImage, ProductOptionForm } from 'components';
 import * as S from './style';
 
 export function ProductOption() {
@@ -12,8 +12,8 @@ export function ProductOption() {
 
       <div className="append-set">
         <ButtonAppend
-          width="130px"
-          height="40px"
+          width="140px"
+          height="49px"
           content="+ 옵션 세트 추가"
           onClick={() => {
             setOptionSets([...optionSets, { id: nanoid() }]);
@@ -34,7 +34,7 @@ export function ProductOption() {
           </div>
 
           <ProductOptionImage />
-          <ProductOptionDetail />
+          <ProductOptionForm />
         </S.Wrapper>
       ))}
     </S.Container>

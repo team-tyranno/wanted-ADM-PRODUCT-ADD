@@ -78,7 +78,7 @@ export const Wrapper = styled.section`
 
       input {
         height: 42px;
-        margin-right: -20px;
+        margin-right: -25px;
         border: 1px solid #ddd;
         border-radius: 4px;
         padding-left: 12px;
@@ -98,7 +98,6 @@ export const Wrapper = styled.section`
       display: flex;
       align-items: center;
       margin-right: auto;
-      cursor: pointer;
 
       button {
         width: 27px;

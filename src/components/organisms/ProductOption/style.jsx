@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.form`
   position: relative;
   display: flex;
   flex-direction: column;
 
-  min-height: 750px;
+  min-height: 700px;
   padding-top: 32px;
   background-color: rgba(238, 238, 238, 0.5);
 
@@ -19,7 +19,7 @@ export const Container = styled.div`
 
   .append-set {
     position: absolute;
-    top: -41px;
+    top: -49px;
     right: 0;
   }
 `;
