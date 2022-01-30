@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.section`
   position: relative;
   width: 900px;
-  margin: 40px 0 0 20px;
+  margin: 30px 20px;
   border: 1px solid #ddd;
 
   .category-title {
