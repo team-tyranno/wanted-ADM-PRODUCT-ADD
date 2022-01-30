@@ -4,7 +4,12 @@ import { ButtonAppend, ButtonDelete, ProductOptionDetail } from 'components';
 import * as S from './style';
 
 export function ProductOptionForm() {
-  const [options, setOptions] = useState([{ id: nanoid() }]);
+  const [options, setOptions] = useState([
+    {
+      id: nanoid(),
+      price: { original: 0, discount: 0 },
+    },
+  ]);
 
   return (
     <>
@@ -27,7 +32,16 @@ export function ProductOptionForm() {
           <div className="option-info">
             <input className="price" type="text" placeholder="상품 정상가 (필수)" />원
             <span>
-              할인율: <b>38%</b>
+              할인율:{' '}
+              <b
+                style={
+                  option.price.original === option.price.discount
+                    ? { display: 'none' }
+                    : { display: 'block' }
+                }
+              >
+                00%
+              </b>
             </span>
             <input className="price" type="text" placeholder="상품 판매가 (필수)" />원
             <input className="stock" type="text" placeholder="재고 (필수)" />개

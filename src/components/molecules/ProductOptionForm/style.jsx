@@ -33,8 +33,12 @@ export const Wrapper = styled.section`
       align-items: center;
       font-size: 15px;
 
-      span b {
-        font-weight: 800;
+      span {
+        width: 80px;
+
+        b {
+          font-weight: 800;
+        }
       }
 
       input {
