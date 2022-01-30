@@ -7,11 +7,11 @@ export const Wrapper = styled.section`
 
   height: 240px;
   border: 1px solid #ddd;
-  background-color: #dedede;
+  background-color: #eee;
   background-position: center;
   background-size: cover;
 
   label {
-    background-color: rgba(222, 222, 222, 0.5);
+    background-color: rgba(238, 238, 238, 0.5);
   }
 `;
