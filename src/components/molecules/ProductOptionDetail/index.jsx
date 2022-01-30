@@ -12,7 +12,13 @@ export function ProductOptionDetail() {
           <span>└</span>
           <input className="name" type="text" placeholder="추가 옵션명 (필수)" />
           <input className="price" type="text" placeholder="추가 옵션 정상가 (필수)" />원
-          <ButtonDelete width="60px" height="42px" />
+          <ButtonDelete
+            width="60px"
+            height="42px"
+            onClick={() => {
+              setSuboptions(suboptions.filter((element) => element.id !== suboption.id));
+            }}
+          />
         </div>
       ))}
 
