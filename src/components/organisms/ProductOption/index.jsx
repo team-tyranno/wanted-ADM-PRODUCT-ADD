@@ -4,17 +4,21 @@ import * as S from './style';
 
 export function ProductOption() {
   return (
-    <S.Wrapper>
-      <div className="delete-set">
-        <ButtonDelete width="70px" height="35px" />
-      </div>
+    <S.Container>
+      <span className="default-text">옵션세트를 추가하여 옵션을 구성해 주세요.</span>
 
-      <ProductOptionImage />
-      <ProductOptionDetail />
+      <S.Wrapper>
+        <div className="delete-set">
+          <ButtonDelete width="70px" height="35px" />
+        </div>
 
-      <div className="append-option">
-        <ButtonAppend width="100%" height="54px" content="+ 옵션 추가" />
-      </div>
-    </S.Wrapper>
+        <ProductOptionImage />
+        <ProductOptionDetail />
+
+        <div className="append-option">
+          <ButtonAppend width="100%" height="54px" content="+ 옵션 추가" />
+        </div>
+      </S.Wrapper>
+    </S.Container>
   );
 }
