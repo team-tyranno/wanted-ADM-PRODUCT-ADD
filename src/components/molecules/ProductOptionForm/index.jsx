@@ -61,7 +61,13 @@ export function ProductOptionForm() {
           height="54px"
           content="+ 옵션 추가"
           onClick={() => {
-            setOptions([...options, { id: nanoid() }]);
+            setOptions([
+              ...options,
+              {
+                id: nanoid(),
+                price: { original: 0, discount: 0 },
+              },
+            ]);
           }}
         />
       </div>
