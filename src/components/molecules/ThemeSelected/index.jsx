@@ -9,7 +9,6 @@ export function ThemeSelected({ checkedLists, onCheck }) {
       {checkedLists.length ? (
         checkedLists.map((checkedList) => (
           <ButtonTheme
-            type="button"
             key={checkedList.key}
             text={checkedList.name}
             onCheck={() => onCheck(checkedList.key)}

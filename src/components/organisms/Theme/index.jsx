@@ -9,6 +9,7 @@ export function Theme({ formStates, handleChange }) {
       category.key === key ? { ...category, isChecked: !category.isChecked } : category,
     );
     const checked = edit.filter((category) => category.isChecked);
+
     handleChange({ themes: edit, checkedLists: checked });
   };
 

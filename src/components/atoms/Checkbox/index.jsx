@@ -10,7 +10,7 @@ export function Checkbox({ theme, onCheck }) {
   return (
     <S.Container>
       <label htmlFor={id}>
-        <input id={id} type="checkbox" onClick={() => onCheck(key)} checked={isChecked} />
+        <input id={id} type="checkbox" checked={isChecked} onChange={() => onCheck(key)} />
         <span>{name}</span>
       </label>
     </S.Container>

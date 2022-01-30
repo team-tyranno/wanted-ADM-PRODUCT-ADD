@@ -13,7 +13,8 @@ export function Tag({ tag, isSelectedFilter, onCheck }) {
 }
 
 Tag.propTypes = {
-  tag: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  tag: PropTypes.object.isRequired,
   isSelectedFilter: PropTypes.bool,
   onCheck: PropTypes.func.isRequired,
 };

@@ -22,13 +22,9 @@ import { INITIAL_STATES, SET_EXPIRATION, SET_SALES, SET_DELIVERY } from 'constan
 import * as S from './style';
 
 export function ProductRegister() {
-  const [formStates, setFormStates] = useState(INITIAL_STATES);
   const [openModal, setOpenModal] = useState(false);
   const [modalText, setModalText] = useState('');
-
-  const handleChange = (newStates) => {
-    setFormStates({ ...formStates, ...newStates });
-  };
+  const [formStates, setFormStates] = useState(INITIAL_STATES);
 
   const validateSubmit = () => {
     const message = setError(formStates);
@@ -36,6 +32,10 @@ export function ProductRegister() {
       setModalText(message);
       setOpenModal(true);
     }
+  };
+
+  const handleChange = (newStates) => {
+    setFormStates({ ...formStates, ...newStates });
   };
 
   return (
@@ -68,7 +68,7 @@ export function ProductRegister() {
           <GoodsInformation handleChange={handleChange} />
         </Item>
         <Item title="상품 썸네일">
-          <ImageAppender />
+          <ImageAppender isMulti={false} />
         </Item>
         <Item title="상품 대표 이미지">
           <ImageAppender isMulti />
