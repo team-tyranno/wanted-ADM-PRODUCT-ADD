@@ -26,7 +26,7 @@ export const Container = styled.div`
     top: -1px;
 
     padding: 6px 4px;
-    background-color: #342e6c;
+    background-color: #3d0a91;
     color: #fff;
   }
 `;
