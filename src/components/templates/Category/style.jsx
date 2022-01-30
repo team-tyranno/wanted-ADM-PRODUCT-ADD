@@ -9,7 +9,7 @@ export const Wrapper = styled.section`
   .category-title {
     width: 100%;
     border-bottom: 1px solid #ddd;
-    padding: 14px 20px 10px;
+    padding: 18px 16px 14px;
     font-size: 16px;
     font-weight: 500;
   }

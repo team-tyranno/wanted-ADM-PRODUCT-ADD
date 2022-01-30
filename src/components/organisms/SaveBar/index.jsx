@@ -5,10 +5,13 @@ import * as S from './style';
 
 export function SaveBar({ onClick }) {
   return (
-    <S.Container>
-      <S.Span>상품 등록</S.Span>
-      <Button content="저장하기" width="100px" onClick={onClick} />
-    </S.Container>
+    <>
+      <S.Blocker />
+      <S.Container>
+        <span>상품 등록</span>
+        <Button width="84px" content="저장하기" onClick={onClick} />
+      </S.Container>
+    </>
   );
 }
 
