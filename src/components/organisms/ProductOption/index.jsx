@@ -5,6 +5,7 @@ import * as S from './style';
 
 export function ProductOption() {
   const [optionSets, setOptionSets] = useState([{ id: nanoid() }]);
+  const [options, setOptions] = useState([{ id: nanoid() }]);
 
   return (
     <S.Container>
@@ -34,10 +35,20 @@ export function ProductOption() {
           </div>
 
           <ProductOptionImage />
-          <ProductOptionDetail />
+
+          {options.map((option) => (
+            <ProductOptionDetail key={option.id} />
+          ))}
 
           <div className="append-option">
-            <ButtonAppend width="100%" height="54px" content="+ 옵션 추가" />
+            <ButtonAppend
+              width="100%"
+              height="54px"
+              content="+ 옵션 추가"
+              onClick={() => {
+                setOptions([...options, { id: nanoid() }]);
+              }}
+            />
           </div>
         </S.Wrapper>
       ))}
