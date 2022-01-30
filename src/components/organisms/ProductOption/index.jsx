@@ -24,7 +24,13 @@ export function ProductOption() {
       {optionSets.map((optionSet) => (
         <S.Wrapper key={optionSet.id}>
           <div className="delete-set">
-            <ButtonDelete width="70px" height="35px" />
+            <ButtonDelete
+              width="70px"
+              height="35px"
+              onClick={() => {
+                setOptionSets(optionSets.filter((element) => element.id !== optionSet.id));
+              }}
+            />
           </div>
 
           <ProductOptionImage />
