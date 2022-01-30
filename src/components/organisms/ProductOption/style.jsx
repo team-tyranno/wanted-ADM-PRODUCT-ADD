@@ -6,6 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
 
   min-height: 750px;
+  padding-top: 32px;
   background-color: rgba(238, 238, 238, 0.5);
 
   .append-set {
@@ -29,7 +30,7 @@ export const Wrapper = styled.article`
   gap: 12px;
 
   width: 820px;
-  margin: 72px 40px 40px;
+  margin: 40px 30px;
   border: 1px solid #ddd;
   padding: 14px;
   background-color: #fff;
