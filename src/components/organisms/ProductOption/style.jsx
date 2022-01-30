@@ -8,6 +8,12 @@ export const Container = styled.div`
   min-height: 750px;
   background-color: rgba(238, 238, 238, 0.5);
 
+  .append-set {
+    position: absolute;
+    top: -41px;
+    right: 0;
+  }
+
   .default-text {
     position: absolute;
     top: 250px;

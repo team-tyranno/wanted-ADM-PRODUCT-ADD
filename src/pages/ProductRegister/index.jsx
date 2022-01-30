@@ -15,7 +15,6 @@ import {
   SaveBar,
   Theme,
   InputDatePeriod,
-  ButtonAppend,
   ButtonSwitch,
 } from 'components';
 import { setError, validateStartBeforeEnd } from 'utils';
@@ -81,10 +80,6 @@ export function ProductRegister() {
 
       {/* 10~12 */}
       <Category title="상품 옵션*">
-        <div className="append-set">
-          <ButtonAppend width="130px" height="40px" content="+ 옵션 세트 추가" />
-        </div>
-
         <ProductOption />
       </Category>
 
