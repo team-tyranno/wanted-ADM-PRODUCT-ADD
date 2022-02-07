@@ -5,7 +5,7 @@ import * as S from './style';
 
 export function FilterTag() {
   const [show, setShow] = useState('none');
-  const [tags, setTags] = useState(TAGS.filter((tag) => !tag.isSelected));
+  const [tags, setTags] = useState(TAGS);
   const [selected, setSelected] = useState([]);
 
   const onChange = (e) => {
@@ -21,13 +21,18 @@ export function FilterTag() {
   };
 
   const onCheck = (key) => {
-    const check = tags.map((tag) =>
-      tag.key === key ? { ...tag, isSelected: !tag.isSelected } : tag,
-    );
-    setTags([...check]);
+    const selectedTag = tags.filter((tag) => tag.key === key);
+    const isInclude = selected.findIndex((tag) => tag.name === selectedTag[0].name);
+    const updateSelected = selected;
 
-    const set = new Set(check.filter((tag) => tag.isSelected));
-    setSelected([...set]);
+    if (isInclude > -1) {
+      updateSelected.splice(isInclude, 1);
+    } else {
+      updateSelected.push(selectedTag[0]);
+    }
+
+    setSelected([...updateSelected]);
+    setTags(TAGS);
     setShow('none');
   };
 
